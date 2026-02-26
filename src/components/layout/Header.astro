@@ -1,0 +1,116 @@
+---
+import { siteConfig } from '@/config/site';
+---
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo" aria-label={`${siteConfig.name} — Home`}>
+      <span class="logo-text">{siteConfig.name}</span>
+      <span class="logo-tagline">{siteConfig.tagline}</span>
+    </a>
+
+    <nav aria-label="Primary navigation" class="desktop-nav">
+      <ul>
+        {siteConfig.nav.map((item) => (
+          <li>
+            <a href={item.href}>{item.label}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <!-- Mobile hamburger — pairs with MobileNav checkbox toggle -->
+    <label for="mobile-nav-toggle" class="hamburger" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    background-color: var(--storm-charcoal);
+    color: var(--premium-white);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+
+  .logo {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: var(--premium-white);
+  }
+
+  .logo-text {
+    font-size: 1.25rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .logo-tagline {
+    font-size: 0.7rem;
+    opacity: 0.7;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .desktop-nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .desktop-nav a {
+    color: var(--premium-white);
+    text-decoration: none;
+    font-weight: 500;
+    opacity: 0.85;
+    transition: opacity 0.15s;
+  }
+
+  .desktop-nav a:hover {
+    opacity: 1;
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 0.25rem;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--premium-white);
+    border-radius: 2px;
+  }
+
+  @media (max-width: 768px) {
+    .desktop-nav {
+      display: none;
+    }
+
+    .hamburger {
+      display: flex;
+    }
+  }
+</style>

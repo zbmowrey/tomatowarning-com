@@ -1,0 +1,41 @@
+---
+interface Props {
+  efLevel: number;
+  efColor: string;
+}
+
+const { efLevel, efColor } = Astro.props;
+---
+
+<div class="heat-indicator">
+  <span
+    class="ef-swatch"
+    style={`background-color: ${efColor};`}
+    aria-hidden="true"
+  ></span>
+  <span class="ef-label">EF-{efLevel}</span>
+</div>
+
+<style>
+  .heat-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .ef-swatch {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .ef-label {
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--storm-charcoal);
+  }
+</style>

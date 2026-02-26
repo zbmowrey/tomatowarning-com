@@ -1,0 +1,12 @@
+{
+  "name": "Gulf Breeze",
+  "efLevel": 2,
+  "slug": "ef-2-gulf-breeze",
+  "flavorHeadline": "Roasted tomato, chipotle smoke, serrano, ACV brightness",
+  "heatDescriptor": "Building on the horizon — smoke, depth, and your first real tingle",
+  "scovilleMin": 1500,
+  "scovilleMax": 5000,
+  "keyIngredients": ["chipotle peppers", "serrano peppers"],
+  "efColor": "#CC5500",
+  "status": "draft"
+}

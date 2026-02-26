@@ -1,0 +1,34 @@
+---
+import SEOHead from '@/components/common/SEOHead.astro';
+import SkipNav from '@/components/common/SkipNav.astro';
+import '@/styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalPath: string;
+  ogImage?: string;
+  noIndex?: boolean;
+  structuredData?: Record<string, unknown>;
+}
+
+const { title, description, canonicalPath, ogImage, noIndex, structuredData } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <SEOHead
+      title={title}
+      description={description}
+      canonicalPath={canonicalPath}
+      ogImage={ogImage}
+      noIndex={noIndex}
+      structuredData={structuredData}
+    />
+  </head>
+  <body>
+    <SkipNav />
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,315 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import AssetDownload from '@/components/press/AssetDownload.astro';
+import { PressInquiryForm } from '@/components/forms/PressInquiryForm';
+import { FooterSignupForm } from '@/components/forms/FooterSignupForm';
+import { FORM_ENDPOINT, formConfigs } from '@/config/forms';
+
+// Asset URLs — empty strings trigger the "not available" state
+const brandKitUrl = import.meta.env.PUBLIC_BRAND_KIT_URL ?? '';
+const factSheetUrl = import.meta.env.PUBLIC_FACT_SHEET_PDF_URL ?? '';
+
+// CF Worker endpoint — optional, falls back to mailto in PressInquiryForm
+const pressWorkerEndpoint = import.meta.env.PUBLIC_PRESS_INQUIRY_ENDPOINT ?? '';
+---
+
+<PageLayout
+  title="Storm Watch — Press | Tomato Warning"
+  description="Press resources for Tomato Warning. Brand overview, high-resolution assets, founder story, and press contact."
+  canonicalPath="/press/"
+>
+  <article class="press-page">
+    <div class="press-inner">
+
+      <header class="page-header">
+        <p class="eyebrow">Press</p>
+        <h1>Storm Watch.</h1>
+        <p class="page-lead">
+          Resources for media, food writers, and podcast hosts covering specialty food,
+          hot sauce culture, and mission-driven brands.
+        </p>
+      </header>
+
+      <div class="press-body">
+        <div class="press-content">
+
+          <section class="press-section" aria-labelledby="brand-overview-heading">
+            <h2 id="brand-overview-heading">Brand Overview</h2>
+            <p>
+              Tomato Warning is a Florida-born small-batch salsa brand built around the Enhanced Fujita
+              tornado scale — the same system meteorologists use to classify tornadoes. Each of the five
+              varieties corresponds to an EF level, from EF-1 Coastal Calm (500–1,500 SHU) to EF-5
+              Ground Zero (100,000–500,000 SHU). Every batch is Scoville-verified. Every jar lands
+              exactly where it should on the scale.
+            </p>
+            <p>
+              The brand is rooted in the conviction that heat deserves an honest rating system — and
+              that a product with a clear identity, a charitable giving structure, and a story worth
+              telling can earn its place on shelves and in pantries across Florida and beyond.
+            </p>
+          </section>
+
+          <section class="press-section" aria-labelledby="founder-heading">
+            <h2 id="founder-heading">Founder</h2>
+            <p>
+              Tomato Warning was founded by a Florida native who grew up watching hurricane forecasts
+              the way other kids watched sports scores. The idea started simple: a heat scale that
+              actually means something, made from Florida tomatoes, by someone who knows what a real
+              storm feels like. The EF system — precise, universally understood, and deeply Floridian —
+              was the obvious choice.
+            </p>
+            <p>
+              The brand is currently in pre-launch, validating demand across three audiences: consumers
+              who want the product, retailers who would stock it, and nonprofits and community
+              organizations who would use it for fundraising. A portion of every sale will support
+              community recovery programs — the charitable partner is being finalized.
+            </p>
+          </section>
+
+          <section class="press-section" aria-labelledby="facts-heading">
+            <h2 id="facts-heading">Fast Facts</h2>
+            <dl class="fact-list">
+              <div class="fact-item">
+                <dt>Founded</dt>
+                <dd>2026</dd>
+              </div>
+              <div class="fact-item">
+                <dt>Based in</dt>
+                <dd>Florida</dd>
+              </div>
+              <div class="fact-item">
+                <dt>Product</dt>
+                <dd>Small-batch salsa, five EF-rated heat levels</dd>
+              </div>
+              <div class="fact-item">
+                <dt>Scoville range</dt>
+                <dd>500 (EF-1) to 500,000 (EF-5)</dd>
+              </div>
+              <div class="fact-item">
+                <dt>Status</dt>
+                <dd>Pre-launch, capturing retailer and consumer demand</dd>
+              </div>
+              <div class="fact-item">
+                <dt>Mission</dt>
+                <dd>Charitable giving to community organizations (partner TBD)</dd>
+              </div>
+            </dl>
+          </section>
+
+          <section class="press-section" aria-labelledby="assets-heading">
+            <h2 id="assets-heading">Downloads</h2>
+            <div class="asset-list">
+              {brandKitUrl ? (
+                <AssetDownload
+                  href={brandKitUrl}
+                  label="Brand Kit"
+                  description="High-resolution logos, color palette, typography guidelines"
+                  fileType="ZIP"
+                />
+              ) : (
+                <p class="asset-unavailable">Brand kit — available at launch. Contact us to request early access.</p>
+              )}
+
+              {factSheetUrl ? (
+                <AssetDownload
+                  href={factSheetUrl}
+                  label="Product Fact Sheet"
+                  description="EF scale overview, Scoville data, ingredient highlights, SKU list"
+                  fileType="PDF"
+                />
+              ) : (
+                <p class="asset-unavailable">Fact sheet — available at launch. Submit an inquiry for advance copy.</p>
+              )}
+            </div>
+          </section>
+
+        </div>
+
+        <div class="press-contact">
+          <h2>Press Inquiry</h2>
+          <p class="form-intro">
+            Covering specialty food, hot sauce culture, or mission-driven brands?
+            We respond to press inquiries within 2 business days.
+          </p>
+          <PressInquiryForm
+            client:visible
+            submitEndpoint={pressWorkerEndpoint || undefined}
+            fallbackMailto="mailto:press@tomatowarning.com"
+            successMessage="Thanks for reaching out. We'll respond within 2 business days."
+            privacyPolicyUrl="/privacy/"
+          />
+        </div>
+      </div>
+
+    </div>
+  </article>
+
+  <FooterSignupForm
+    slot="footer-form"
+    client:visible
+    formEndpoint={FORM_ENDPOINT}
+    consumerListId={formConfigs.consumer.listId}
+    retailerListId={formConfigs.retailer.listId}
+    nonprofitListId={formConfigs.nonprofit.listId}
+    successMessage={formConfigs.consumer.successMessage}
+    alreadySubscribedMessage={formConfigs.consumer.alreadySubscribedMessage}
+    noscriptFallbackUrl={formConfigs.consumer.noscriptFallbackUrl}
+    privacyPolicyUrl="/privacy/"
+  />
+</PageLayout>
+
+<style>
+  .press-page {
+    padding: 4rem 1.5rem;
+  }
+
+  .press-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .page-header {
+    max-width: 720px;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--radar-teal);
+    margin: 0 0 0.75rem;
+  }
+
+  .page-header h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: var(--storm-charcoal);
+    margin: 0 0 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .page-lead {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--storm-charcoal);
+    opacity: 0.8;
+    margin: 0;
+    max-width: 60ch;
+  }
+
+  .press-body {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .press-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .press-section h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--storm-charcoal);
+    margin: 0 0 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--radar-teal);
+    display: inline-block;
+  }
+
+  .press-section p {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--storm-charcoal);
+    margin: 0 0 0.75rem;
+  }
+
+  .press-section p:last-child {
+    margin-bottom: 0;
+  }
+
+  .fact-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 0;
+  }
+
+  .fact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .fact-item dt {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--radar-teal);
+  }
+
+  .fact-item dd {
+    font-size: 0.9rem;
+    color: var(--storm-charcoal);
+    margin: 0;
+  }
+
+  .asset-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .asset-unavailable {
+    font-size: 0.875rem;
+    color: var(--storm-charcoal);
+    opacity: 0.55;
+    font-style: italic;
+    margin: 0;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(44, 44, 44, 0.1);
+  }
+
+  .press-contact {
+    position: sticky;
+    top: 5rem;
+  }
+
+  .press-contact h2 {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: var(--storm-charcoal);
+    margin: 0 0 0.75rem;
+  }
+
+  .form-intro {
+    font-size: 0.9rem;
+    color: var(--storm-charcoal);
+    opacity: 0.7;
+    margin: 0 0 1.5rem;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 1024px) {
+    .press-body {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .press-contact {
+      position: static;
+    }
+
+    .fact-list {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

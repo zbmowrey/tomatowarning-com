@@ -1,0 +1,12 @@
+{
+  "name": "Ground Zero",
+  "efLevel": 5,
+  "slug": "ef-5-ground-zero",
+  "flavorHeadline": "Carolina Reaper + Trinidad Moruga Scorpion, charred tomato character",
+  "heatDescriptor": "Total devastation — for the few who dare",
+  "scovilleMin": 100000,
+  "scovilleMax": 500000,
+  "keyIngredients": ["Carolina Reaper", "Trinidad Moruga Scorpion"],
+  "efColor": "#1C0A0A",
+  "status": "draft"
+}

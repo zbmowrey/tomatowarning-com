@@ -1,0 +1,148 @@
+---
+/**
+ * AssetDownload.astro — Download card for press/retailer assets.
+ * When href is empty, parent is responsible for rendering the fallback
+ * ("Request spec sheet" link or similar) — this component renders nothing.
+ * Spec resolved decision #9: conditional display controlled by parent.
+ */
+interface Props {
+  /** Download URL. When empty/undefined, this component renders nothing. */
+  href?: string;
+  /** Visible label for the download link */
+  label: string;
+  /** Short description of the asset */
+  description?: string;
+  /** File type hint displayed on the card (e.g. "PDF", "ZIP") */
+  fileType?: string;
+  /** File size hint displayed on the card (e.g. "2.4 MB") */
+  fileSize?: string;
+}
+
+const { href, label, description, fileType, fileSize } = Astro.props;
+
+// Render nothing when no href — parent handles fallback
+if (!href || href.trim() === '') {
+  return;
+}
+---
+
+<a href={href} class="asset-download" download aria-label={`Download ${label}${fileType ? ` (${fileType})` : ''}`}>
+  <div class="asset-icon" aria-hidden="true">
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+      <polyline points="7 10 12 15 17 10"/>
+      <line x1="12" y1="15" x2="12" y2="3"/>
+    </svg>
+  </div>
+
+  <div class="asset-info">
+    <span class="asset-label">{label}</span>
+    {description && <span class="asset-description">{description}</span>}
+    {(fileType || fileSize) && (
+      <span class="asset-meta">
+        {fileType && <span class="asset-filetype">{fileType}</span>}
+        {fileSize && <span class="asset-filesize">{fileSize}</span>}
+      </span>
+    )}
+  </div>
+
+  <div class="asset-arrow" aria-hidden="true">
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="5" y1="12" x2="19" y2="12"/>
+      <polyline points="12 5 19 12 12 19"/>
+    </svg>
+  </div>
+</a>
+
+<style>
+  .asset-download {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    background: rgba(245, 240, 235, 0.06);
+    border: 1px solid rgba(245, 240, 235, 0.15);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--premium-white);
+    transition: background 0.15s, border-color 0.15s;
+  }
+
+  .asset-download:hover {
+    background: rgba(245, 240, 235, 0.12);
+    border-color: var(--radar-teal);
+  }
+
+  .asset-download:hover .asset-icon {
+    color: var(--radar-teal);
+  }
+
+  .asset-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--premium-white);
+    opacity: 0.7;
+    transition: color 0.15s;
+  }
+
+  .asset-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .asset-label {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--premium-white);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .asset-description {
+    font-size: 0.8125rem;
+    color: var(--premium-white);
+    opacity: 0.65;
+    line-height: 1.4;
+  }
+
+  .asset-meta {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-top: 0.1rem;
+  }
+
+  .asset-filetype {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: rgba(0, 180, 216, 0.2);
+    color: var(--radar-teal);
+    padding: 0.15rem 0.4rem;
+    border-radius: 3px;
+  }
+
+  .asset-filesize {
+    font-size: 0.75rem;
+    color: var(--premium-white);
+    opacity: 0.5;
+  }
+
+  .asset-arrow {
+    flex-shrink: 0;
+    opacity: 0.4;
+    transition: opacity 0.15s, transform 0.15s;
+  }
+
+  .asset-download:hover .asset-arrow {
+    opacity: 0.8;
+    transform: translateX(2px);
+  }
+</style>

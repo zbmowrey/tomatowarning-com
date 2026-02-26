@@ -1,0 +1,86 @@
+---
+import { getCollection } from 'astro:content';
+import ProductLayout from '@/layouts/ProductLayout.astro';
+import ProductHero from '@/components/product/ProductHero.astro';
+import ProductDetails from '@/components/product/ProductDetails.astro';
+import { ConsumerSignupForm } from '@/components/forms/ConsumerSignupForm';
+import { FooterSignupForm } from '@/components/forms/FooterSignupForm';
+import { FORM_ENDPOINT, consumerFormConfig, formConfigs } from '@/config/forms';
+
+export async function getStaticPaths() {
+  const allProducts = await getCollection('products');
+
+  const publishedProducts = import.meta.env.PROD
+    ? allProducts.filter((p) => p.data.status !== 'draft')
+    : allProducts;
+
+  return publishedProducts.map((product) => ({
+    params: { slug: product.data.slug },
+    props: { product: product.data },
+  }));
+}
+
+const { product } = Astro.props;
+const canonicalPath = `/products/${product.slug}/`;
+---
+
+<ProductLayout product={product} canonicalPath={canonicalPath}>
+  <ProductHero product={product} />
+  <ProductDetails product={product} />
+
+  <section class="product-signup" aria-labelledby="product-signup-heading">
+    <div class="product-signup-inner">
+      <h2 id="product-signup-heading" class="product-signup-heading">
+        Get notified when {product.name} launches
+      </h2>
+      <ConsumerSignupForm
+        client:visible
+        formEndpoint={FORM_ENDPOINT}
+        listId={consumerFormConfig.listId}
+        analyticsEvent="consumer_signup"
+        successMessage={consumerFormConfig.successMessage}
+        alreadySubscribedMessage={consumerFormConfig.alreadySubscribedMessage}
+        noscriptFallbackUrl={consumerFormConfig.noscriptFallbackUrl}
+        sourceContext={product.slug}
+        showZipCode={true}
+        privacyPolicyUrl="/privacy/"
+      />
+    </div>
+  </section>
+
+  <FooterSignupForm
+    slot="footer-form"
+    client:visible
+    formEndpoint={FORM_ENDPOINT}
+    consumerListId={formConfigs.consumer.listId}
+    retailerListId={formConfigs.retailer.listId}
+    nonprofitListId={formConfigs.nonprofit.listId}
+    successMessage={formConfigs.consumer.successMessage}
+    alreadySubscribedMessage={formConfigs.consumer.alreadySubscribedMessage}
+    noscriptFallbackUrl={formConfigs.consumer.noscriptFallbackUrl}
+    privacyPolicyUrl="/privacy/"
+  />
+</ProductLayout>
+
+<style>
+  .product-signup {
+    padding: 4rem 1.5rem;
+    background: var(--storm-charcoal);
+    color: var(--premium-white);
+  }
+
+  .product-signup-inner {
+    max-width: 480px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .product-signup-heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--premium-white);
+  }
+</style>

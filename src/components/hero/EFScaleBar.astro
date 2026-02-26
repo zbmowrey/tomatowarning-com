@@ -1,0 +1,126 @@
+---
+/**
+ * EFScaleBar.astro — Horizontal EF-1 to EF-5 scale bar.
+ * Renders all 5 jar positions with text labels (WCAG: not color alone).
+ * Reads product data from the content collection at build time.
+ * Each jar is loaded eagerly since the bar appears in the hero (above fold).
+ */
+import { getCollection } from 'astro:content';
+import JarImage from './JarImage.astro';
+
+const allProducts = await getCollection('products');
+
+// Sort by efLevel so bar always reads EF-1 → EF-5 left to right
+const products = allProducts.sort((a, b) => a.data.efLevel - b.data.efLevel);
+
+// EF color stops for the gradient background (spec-defined hex values)
+const gradientStops = [
+  '#D4A017', // EF-1
+  '#CC5500', // EF-2
+  '#8B2500', // EF-3
+  '#5C0A0A', // EF-4
+  '#1C0A0A', // EF-5
+].join(', ');
+---
+
+<div
+  class="ef-scale-bar"
+  aria-label="EF Scale: five heat levels from EF-1 Coastal Calm to EF-5 Ground Zero"
+  role="region"
+>
+  <div
+    class="scale-gradient"
+    style={`background: linear-gradient(to right, ${gradientStops});`}
+    aria-hidden="true"
+  ></div>
+
+  <ol class="scale-jars" aria-label="EF levels from mildest to hottest">
+    {products.map((product) => (
+      <li class="scale-jar-item">
+        <JarImage
+          src={product.data.jarImage}
+          alt={product.data.jarImageAlt ?? `${product.data.name} hot sauce jar`}
+          efLevel={product.data.efLevel}
+          efColor={product.data.efColor}
+          width={120}
+          height={160}
+          eager={true}
+        />
+        <span class="scale-label">
+          <span class="scale-ef-badge">EF-{product.data.efLevel}</span>
+          <span class="scale-product-name">{product.data.name}</span>
+        </span>
+      </li>
+    ))}
+  </ol>
+</div>
+
+<style>
+  .ef-scale-bar {
+    width: 100%;
+    position: relative;
+  }
+
+  .scale-gradient {
+    height: 6px;
+    border-radius: 3px;
+    margin-bottom: 1.5rem;
+  }
+
+  .scale-jars {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .scale-jar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .scale-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    text-align: center;
+  }
+
+  .scale-ef-badge {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--premium-white);
+    opacity: 0.9;
+  }
+
+  .scale-product-name {
+    font-size: 0.65rem;
+    font-weight: 500;
+    color: var(--premium-white);
+    opacity: 0.65;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+
+  @media (max-width: 600px) {
+    .scale-jars {
+      gap: 0.5rem;
+    }
+
+    .scale-product-name {
+      display: none;
+    }
+  }
+</style>

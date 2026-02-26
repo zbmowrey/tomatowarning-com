@@ -1,0 +1,47 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Header from '@/components/layout/Header.astro';
+import MobileNav from '@/components/layout/MobileNav.astro';
+import Footer from '@/components/layout/Footer.astro';
+import { FooterSignupForm } from '@/components/forms/FooterSignupForm';
+import { FORM_ENDPOINT, consumerFormConfig, retailerFormConfig, nonprofitFormConfig } from '@/config/forms';
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalPath: string;
+  ogImage?: string;
+  noIndex?: boolean;
+  structuredData?: Record<string, unknown>;
+}
+
+const { title, description, canonicalPath, ogImage, noIndex, structuredData } = Astro.props;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonicalPath={canonicalPath}
+  ogImage={ogImage}
+  noIndex={noIndex}
+  structuredData={structuredData}
+>
+  <MobileNav />
+  <Header />
+  <main id="main-content">
+    <slot />
+  </main>
+  <Footer>
+    <FooterSignupForm
+      client:visible
+      formEndpoint={FORM_ENDPOINT}
+      consumerListId={consumerFormConfig.listId}
+      retailerListId={retailerFormConfig.listId}
+      nonprofitListId={nonprofitFormConfig.listId}
+      successMessage="You're on the list!"
+      alreadySubscribedMessage="You're already signed up."
+      noscriptFallbackUrl={consumerFormConfig.noscriptFallbackUrl}
+      privacyPolicyUrl="/privacy/"
+    />
+  </Footer>
+</BaseLayout>

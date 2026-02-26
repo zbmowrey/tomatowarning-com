@@ -1,0 +1,146 @@
+---
+import { getCollection } from 'astro:content';
+import PageLayout from '@/layouts/PageLayout.astro';
+import HeroSection from '@/components/hero/HeroSection.astro';
+import ProductCard from '@/components/product/ProductCard.astro';
+import { ConsumerSignupForm } from '@/components/forms/ConsumerSignupForm';
+import { FooterSignupForm } from '@/components/forms/FooterSignupForm';
+import { FORM_ENDPOINT, consumerFormConfig, formConfigs } from '@/config/forms';
+
+const allProducts = await getCollection('products');
+const publishedProducts = import.meta.env.PROD
+  ? allProducts.filter((p) => p.data.status !== 'draft')
+  : allProducts;
+const sortedProducts = publishedProducts.sort((a, b) => a.data.efLevel - b.data.efLevel);
+
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Tomato Warning',
+  url: 'https://tomatowarning.com',
+  description:
+    'Small-batch Florida salsa rated by the EF storm scale. Five heat levels, batch-consistent Scoville ratings.',
+  sameAs: [],
+};
+---
+
+<PageLayout
+  title="Tomato Warning — Rated by the Storm."
+  description="Small-batch hot sauces built around Florida's EF rating system. From a gentle gust to total devastation. Five levels. All storm."
+  canonicalPath="/"
+  structuredData={organizationJsonLd}
+>
+  <HeroSection />
+
+  {sortedProducts.length > 0 && (
+    <section class="products-section" aria-labelledby="products-heading">
+      <div class="products-inner">
+        <h2 id="products-heading" class="products-heading">The Lineup</h2>
+        <p class="products-sub">Five levels. All storm. No apologies.</p>
+        <div class="products-grid">
+          {sortedProducts.map((product) => (
+            <ProductCard product={product.data} />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="signup-section" aria-labelledby="signup-heading">
+    <div class="signup-inner">
+      <h2 id="signup-heading" class="signup-heading">Get Early Access</h2>
+      <p class="signup-sub">Be first to know when Tomato Warning launches.</p>
+      <div class="signup-form-wrap">
+        <ConsumerSignupForm
+          client:visible
+          formEndpoint={FORM_ENDPOINT}
+          listId={consumerFormConfig.listId}
+          analyticsEvent="consumer_signup"
+          successMessage={consumerFormConfig.successMessage}
+          alreadySubscribedMessage={consumerFormConfig.alreadySubscribedMessage}
+          noscriptFallbackUrl={consumerFormConfig.noscriptFallbackUrl}
+          showZipCode={true}
+          privacyPolicyUrl="/privacy/"
+        />
+      </div>
+    </div>
+  </section>
+
+  <FooterSignupForm
+    slot="footer-form"
+    client:visible
+    formEndpoint={FORM_ENDPOINT}
+    consumerListId={formConfigs.consumer.listId}
+    retailerListId={formConfigs.retailer.listId}
+    nonprofitListId={formConfigs.nonprofit.listId}
+    successMessage={formConfigs.consumer.successMessage}
+    alreadySubscribedMessage={formConfigs.consumer.alreadySubscribedMessage}
+    noscriptFallbackUrl={formConfigs.consumer.noscriptFallbackUrl}
+    privacyPolicyUrl="/privacy/"
+  />
+</PageLayout>
+
+<style>
+  .products-section {
+    padding: 5rem 1.5rem;
+    background: var(--premium-white);
+  }
+
+  .products-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .products-heading {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--storm-charcoal);
+    margin: 0 0 0.5rem;
+    text-align: center;
+  }
+
+  .products-sub {
+    text-align: center;
+    font-size: 1.125rem;
+    color: var(--storm-charcoal);
+    opacity: 0.65;
+    margin: 0 0 3rem;
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .signup-section {
+    padding: 5rem 1.5rem;
+    background: var(--storm-charcoal);
+    color: var(--premium-white);
+  }
+
+  .signup-inner {
+    max-width: 480px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .signup-heading {
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0;
+    color: var(--premium-white);
+  }
+
+  .signup-sub {
+    font-size: 1.125rem;
+    opacity: 0.75;
+    margin: 0;
+  }
+
+  .signup-form-wrap {
+    margin-top: 0.5rem;
+  }
+</style>

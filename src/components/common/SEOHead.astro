@@ -1,0 +1,67 @@
+---
+import { plausibleConfig } from '@/config/analytics';
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalPath: string;
+  ogImage?: string;
+  noIndex?: boolean;
+  structuredData?: Record<string, unknown>;
+}
+
+const {
+  title,
+  description,
+  canonicalPath,
+  ogImage = '/images/og-default.jpg',
+  noIndex = false,
+  structuredData,
+} = Astro.props;
+
+const siteUrl = 'https://tomatowarning.com';
+const canonicalUrl = `${siteUrl}${canonicalPath}`;
+const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
+const plausibleDomain = import.meta.env.PUBLIC_PLAUSIBLE_DOMAIN ?? plausibleConfig.domain;
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- Primary meta -->
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalUrl} />
+
+{noIndex && <meta name="robots" content="noindex, nofollow" />}
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={ogImageUrl} />
+<meta property="og:site_name" content="Tomato Warning" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImageUrl} />
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<!-- Plausible Analytics -->
+{plausibleDomain && (
+  <script
+    defer
+    data-domain={plausibleDomain}
+    src={plausibleConfig.scriptSrc}
+  ></script>
+)}
+
+<!-- Structured Data -->
+{structuredData && (
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+)}

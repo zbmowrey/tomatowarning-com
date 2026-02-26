@@ -1,0 +1,55 @@
+---
+import PageLayout from './PageLayout.astro';
+
+interface ProductData {
+  name: string;
+  efLevel: number;
+  slug: string;
+  flavorHeadline: string;
+  heatDescriptor: string;
+  scovilleMin: number;
+  scovilleMax: number;
+  keyIngredients: [string, string];
+  efColor: string;
+  jarImage?: string;
+  jarImageAlt?: string;
+  metaTitle?: string;
+  metaDescription?: string;
+  status: 'published' | 'draft';
+}
+
+interface Props {
+  product: ProductData;
+  canonicalPath: string;
+}
+
+const { product, canonicalPath } = Astro.props;
+
+const title = product.metaTitle ?? `${product.name} — EF-${product.efLevel} Hot Sauce | Tomato Warning`;
+const description = product.metaDescription ?? product.heatDescriptor;
+const ogImage = product.jarImage ?? '/images/og-default.jpg';
+
+const productJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: product.name,
+  description: product.flavorHeadline,
+  brand: {
+    '@type': 'Brand',
+    name: 'Tomato Warning',
+  },
+  image: ogImage.startsWith('http') ? ogImage : `https://tomatowarning.com${ogImage}`,
+  url: `https://tomatowarning.com${canonicalPath}`,
+};
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  canonicalPath={canonicalPath}
+  ogImage={ogImage}
+  structuredData={productJsonLd}
+>
+  <slot />
+  <slot name="footer-form" slot="footer-form" />
+</PageLayout>

@@ -1,0 +1,12 @@
+{
+  "name": "Coastal Calm",
+  "efLevel": 1,
+  "slug": "ef-1-coastal-calm",
+  "flavorHeadline": "Bright, fresh — FL tomatoes, poblano, cilantro, lime",
+  "heatDescriptor": "A gentle gust — big flavor, little fire",
+  "scovilleMin": 500,
+  "scovilleMax": 1500,
+  "keyIngredients": ["poblano peppers", "cilantro"],
+  "efColor": "#D4A017",
+  "status": "draft"
+}

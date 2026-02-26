@@ -1,0 +1,12 @@
+{
+  "name": "Squall Line",
+  "efLevel": 3,
+  "slug": "ef-3-squall-line",
+  "flavorHeadline": "Habanero-forward with tropical mango counter, complex heat",
+  "heatDescriptor": "The storm is here — tropical sweetness chased by real heat",
+  "scovilleMin": 5000,
+  "scovilleMax": 25000,
+  "keyIngredients": ["habanero peppers", "tropical mango"],
+  "efColor": "#8B2500",
+  "status": "draft"
+}

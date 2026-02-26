@@ -1,0 +1,88 @@
+---
+interface Props {
+  product: {
+    flavorHeadline: string;
+    heatDescriptor: string;
+    keyIngredients: [string, string];
+  };
+}
+
+const { product } = Astro.props;
+---
+
+<section class="product-details">
+  <div class="details-inner">
+    <div class="flavor-section">
+      <h2 class="section-label">Flavor Profile</h2>
+      <p class="flavor-headline">{product.flavorHeadline}</p>
+    </div>
+
+    <div class="heat-section">
+      <h2 class="section-label">The Heat</h2>
+      <p class="heat-descriptor">{product.heatDescriptor}</p>
+    </div>
+
+    <div class="ingredients-section">
+      <h2 class="section-label">Key Ingredients</h2>
+      <ul class="ingredients-list">
+        {product.keyIngredients.map((ingredient) => (
+          <li>{ingredient}</li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .product-details {
+    padding: 3rem 1.5rem;
+  }
+
+  .details-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+  }
+
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--radar-teal);
+    margin: 0 0 0.5rem;
+  }
+
+  .flavor-headline,
+  .heat-descriptor {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin: 0;
+    color: var(--storm-charcoal);
+  }
+
+  .ingredients-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .ingredients-list li {
+    font-size: 1rem;
+    color: var(--storm-charcoal);
+    padding-left: 1.25rem;
+    position: relative;
+  }
+
+  .ingredients-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--radar-teal);
+  }
+</style>

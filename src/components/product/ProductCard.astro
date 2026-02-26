@@ -1,0 +1,110 @@
+---
+import HeatIndicator from './HeatIndicator.astro';
+
+interface Props {
+  product: {
+    name: string;
+    efLevel: number;
+    efColor: string;
+    slug: string;
+    flavorHeadline: string;
+    jarImage?: string;
+    jarImageAlt?: string;
+  };
+}
+
+const { product } = Astro.props;
+
+const productHref = `/products/${product.slug}/`;
+---
+
+<article class="product-card">
+  <a href={productHref} class="card-link" aria-label={`View ${product.name} — EF-${product.efLevel}`}>
+    <div
+      class="card-image-placeholder"
+      style={`background-color: ${product.efColor};`}
+      aria-hidden="true"
+    >
+      {product.jarImage ? (
+        <img
+          src={product.jarImage}
+          alt={product.jarImageAlt ?? `${product.name} hot sauce jar`}
+          class="card-image"
+          loading="lazy"
+        />
+      ) : (
+        <span class="placeholder-label">EF-{product.efLevel}</span>
+      )}
+    </div>
+
+    <div class="card-body">
+      <HeatIndicator efLevel={product.efLevel} efColor={product.efColor} />
+      <h3 class="card-name">{product.name}</h3>
+      <p class="card-flavor">{product.flavorHeadline}</p>
+    </div>
+  </a>
+</article>
+
+<style>
+  .product-card {
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(44, 44, 44, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .product-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(44, 44, 44, 0.15);
+  }
+
+  .card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .card-image-placeholder {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .placeholder-label {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .card-body {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .card-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--storm-charcoal);
+  }
+
+  .card-flavor {
+    font-size: 0.875rem;
+    margin: 0;
+    color: var(--storm-charcoal);
+    opacity: 0.75;
+    line-height: 1.5;
+  }
+</style>

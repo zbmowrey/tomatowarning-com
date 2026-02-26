@@ -1,0 +1,151 @@
+---
+/**
+ * HeroSection.astro — Homepage hero section.
+ * Static, zero client JS. Hardcoded copy per implementation plan decision.
+ * Contains: h1 headline, sub-copy (Scoville + batch consistency), EF definition,
+ * EFScaleBar, and CTA to /mission/.
+ */
+import EFScaleBar from './EFScaleBar.astro';
+import CTAButton from '@/components/common/CTAButton.astro';
+---
+
+<section class="hero-section" aria-labelledby="hero-headline">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <p class="hero-eyebrow">Small-batch Florida salsa</p>
+
+      <h1 id="hero-headline" class="hero-headline">
+        Finally, a heat scale<br />that means something.
+      </h1>
+
+      <p class="hero-subheadline">
+        Five heat levels. One consistent standard.
+        From 500 to 500,000 Scoville — every batch verified,
+        every jar exactly where it should be on the scale.
+      </p>
+
+      <div class="hero-ef-definition" aria-label="What is the EF scale?">
+        <span class="ef-definition-label">What is EF?</span>
+        <p class="ef-definition-text">
+          The Enhanced Fujita scale rates tornado intensity from EF-1 (weak) to EF-5 (catastrophic).
+          We use it to rate heat. Honestly.
+        </p>
+      </div>
+
+      <div class="hero-cta">
+        <CTAButton href="/products/" variant="primary" text="See the Lineup" />
+        <CTAButton href="/mission/" variant="secondary" text="Our Mission" />
+      </div>
+    </div>
+
+    <div class="hero-scale-wrap" aria-label="The EF heat scale">
+      <EFScaleBar />
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    background-color: var(--storm-charcoal);
+    color: var(--premium-white);
+    padding: 5rem 1.5rem 4rem;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .hero-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--radar-teal);
+    margin: 0;
+  }
+
+  .hero-headline {
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    margin: 0;
+    color: var(--premium-white);
+  }
+
+  .hero-subheadline {
+    font-size: 1.125rem;
+    line-height: 1.65;
+    opacity: 0.8;
+    margin: 0;
+    max-width: 42ch;
+  }
+
+  .hero-ef-definition {
+    border-left: 3px solid var(--radar-teal);
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .ef-definition-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--radar-teal);
+  }
+
+  .ef-definition-text {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    opacity: 0.75;
+    margin: 0;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding-top: 0.5rem;
+  }
+
+  .hero-scale-wrap {
+    padding: 1rem 0;
+  }
+
+  /* Responsive: stack on smaller screens */
+  @media (max-width: 900px) {
+    .hero-inner {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .hero-section {
+      min-height: auto;
+      padding: 4rem 1.5rem 3rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-headline {
+      font-size: 2.75rem;
+    }
+  }
+</style>

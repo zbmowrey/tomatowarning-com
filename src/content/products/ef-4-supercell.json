@@ -1,0 +1,12 @@
+{
+  "name": "Supercell",
+  "efLevel": 4,
+  "slug": "ef-4-supercell",
+  "flavorHeadline": "Ghost pepper + red fresno blend, black garlic umami depth",
+  "heatDescriptor": "Rotation confirmed — deep, relentless, rewarding",
+  "scovilleMin": 25000,
+  "scovilleMax": 100000,
+  "keyIngredients": ["ghost pepper", "black garlic"],
+  "efColor": "#5C0A0A",
+  "status": "draft"
+}

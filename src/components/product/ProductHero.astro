@@ -1,0 +1,104 @@
+---
+import HeatIndicator from './HeatIndicator.astro';
+
+interface Props {
+  product: {
+    name: string;
+    efLevel: number;
+    efColor: string;
+    scovilleMin: number;
+    scovilleMax: number;
+    jarImage?: string;
+    jarImageAlt?: string;
+  };
+}
+
+const { product } = Astro.props;
+
+const scovilleFormatted = `${product.scovilleMin.toLocaleString()}–${product.scovilleMax.toLocaleString()} SHU`;
+---
+
+<section class="product-hero">
+  <div class="hero-inner">
+    <div class="jar-placeholder" style={`background-color: ${product.efColor};`} aria-hidden="true">
+      {product.jarImage ? (
+        <img
+          src={product.jarImage}
+          alt={product.jarImageAlt ?? `${product.name} hot sauce jar`}
+          class="jar-image"
+        />
+      ) : (
+        <span class="jar-placeholder-text">EF-{product.efLevel}</span>
+      )}
+    </div>
+
+    <div class="hero-content">
+      <HeatIndicator efLevel={product.efLevel} efColor={product.efColor} />
+      <h1 class="product-name">{product.name}</h1>
+      <p class="scoville-range" aria-label={`Heat level: ${scovilleFormatted}`}>
+        {scovilleFormatted}
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .product-hero {
+    background: var(--storm-charcoal);
+    color: var(--premium-white);
+    padding: 3rem 1.5rem;
+  }
+
+  .hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .jar-placeholder {
+    width: 200px;
+    height: 280px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .jar-placeholder-text {
+    font-size: 2rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .jar-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .product-name {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0;
+    line-height: 1.1;
+  }
+
+  .scoville-range {
+    font-size: 1.125rem;
+    opacity: 0.75;
+    margin: 0;
+    font-variant-numeric: tabular-nums;
+  }
+</style>

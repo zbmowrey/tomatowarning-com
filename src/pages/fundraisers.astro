@@ -1,0 +1,236 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import { NonprofitSignupForm } from '@/components/forms/NonprofitSignupForm';
+import { FooterSignupForm } from '@/components/forms/FooterSignupForm';
+import { FORM_ENDPOINT, nonprofitFormConfig, formConfigs } from '@/config/forms';
+---
+
+<PageLayout
+  title="Fundraise for Recovery | Tomato Warning"
+  description="Run a hot sauce fundraiser with Tomato Warning. 45–50% margins, no upfront cost, custom labels available. Apply for our community partner program."
+  canonicalPath="/fundraisers/"
+>
+  <article class="fundraisers-page">
+    <div class="fundraisers-inner">
+
+      <header class="page-header">
+        <p class="eyebrow">Community Partner Program</p>
+        <h1>Your next fundraiser. Storm-tested.</h1>
+        <p class="page-lead">
+          Tomato Warning is built for organizations that need a fundraiser people actually want to buy.
+          Hot sauce that tells a story — and margins that make the math work.
+        </p>
+      </header>
+
+      <div class="fundraisers-body">
+        <div class="fundraisers-value">
+          <h2>Why it works</h2>
+          <ul class="benefits-list">
+            <li>
+              <div class="benefit-icon" aria-hidden="true">%</div>
+              <div class="benefit-text">
+                <strong>45–50% margins.</strong>
+                <p>One of the highest margins in food fundraising. No complicated tiering.</p>
+              </div>
+            </li>
+            <li>
+              <div class="benefit-icon" aria-hidden="true">$0</div>
+              <div class="benefit-text">
+                <strong>No upfront cost.</strong>
+                <p>Order fulfillment after your campaign ends. No inventory risk for your organization.</p>
+              </div>
+            </li>
+            <li>
+              <div class="benefit-icon" aria-hidden="true">🏷</div>
+              <div class="benefit-text">
+                <strong>Custom label available.</strong>
+                <p>Add your team name or logo to the jar. Minimum quantities apply.</p>
+              </div>
+            </li>
+          </ul>
+
+          <div class="who-qualifies">
+            <h3>Who qualifies</h3>
+            <p>
+              Youth sports teams, schools, nonprofits, churches, and community groups.
+              We review every application to ensure a good fit.
+            </p>
+          </div>
+        </div>
+
+        <div class="fundraisers-form">
+          <h2>Apply Now</h2>
+          <p class="form-intro">
+            Tell us about your organization and campaign. We'll review your application and follow up within a few business days.
+          </p>
+          <NonprofitSignupForm
+            client:visible
+            formEndpoint={FORM_ENDPOINT}
+            listId={nonprofitFormConfig.listId}
+            analyticsEvent="nonprofit_signup"
+            successMessage={nonprofitFormConfig.successMessage}
+            alreadySubscribedMessage={nonprofitFormConfig.alreadySubscribedMessage}
+            noscriptFallbackUrl={nonprofitFormConfig.noscriptFallbackUrl}
+            sourceContext="fundraisers"
+            privacyPolicyUrl="/privacy/"
+          />
+        </div>
+      </div>
+
+    </div>
+  </article>
+
+  <FooterSignupForm
+    slot="footer-form"
+    client:visible
+    formEndpoint={FORM_ENDPOINT}
+    consumerListId={formConfigs.consumer.listId}
+    retailerListId={formConfigs.retailer.listId}
+    nonprofitListId={formConfigs.nonprofit.listId}
+    successMessage={formConfigs.consumer.successMessage}
+    alreadySubscribedMessage={formConfigs.consumer.alreadySubscribedMessage}
+    noscriptFallbackUrl={formConfigs.consumer.noscriptFallbackUrl}
+    privacyPolicyUrl="/privacy/"
+  />
+</PageLayout>
+
+<style>
+  .fundraisers-page {
+    padding: 4rem 1.5rem;
+  }
+
+  .fundraisers-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .page-header {
+    max-width: 720px;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--radar-teal);
+    margin: 0 0 0.75rem;
+  }
+
+  .page-header h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: var(--storm-charcoal);
+    margin: 0 0 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .page-lead {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--storm-charcoal);
+    opacity: 0.8;
+    margin: 0;
+    max-width: 60ch;
+  }
+
+  .fundraisers-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .fundraisers-value h2,
+  .fundraisers-form h2 {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: var(--storm-charcoal);
+    margin: 0 0 1.5rem;
+  }
+
+  .benefits-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .benefits-list li {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .benefit-icon {
+    flex-shrink: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--radar-teal);
+    color: #fff;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 800;
+  }
+
+  .benefit-text strong {
+    display: block;
+    font-size: 0.9375rem;
+    color: var(--storm-charcoal);
+    margin-bottom: 0.2rem;
+  }
+
+  .benefit-text p {
+    font-size: 0.875rem;
+    color: var(--storm-charcoal);
+    opacity: 0.7;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .who-qualifies h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--storm-charcoal);
+    margin: 0 0 0.5rem;
+  }
+
+  .who-qualifies p {
+    font-size: 0.9rem;
+    color: var(--storm-charcoal);
+    opacity: 0.7;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .form-intro {
+    font-size: 0.9375rem;
+    color: var(--storm-charcoal);
+    opacity: 0.7;
+    margin: 0 0 1.5rem;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 900px) {
+    .fundraisers-body {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+
+  /* Ensure large tap targets on mobile */
+  @media (max-width: 600px) {
+    .benefit-icon {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+</style>

@@ -1,0 +1,34 @@
+{
+  "name": "tomatowarning-com",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint . --ext .js,.ts,.astro",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "astro": "^5.0.0",
+    "@astrojs/preact": "^4.0.0",
+    "@astrojs/sitemap": "^3.0.0",
+    "preact": "^10.0.0",
+    "@preact/signals": "^1.0.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^4.0.0",
+    "@tailwindcss/vite": "^4.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^2.0.0",
+    "@testing-library/preact": "^3.0.0",
+    "jsdom": "^25.0.0",
+    "prettier": "^3.0.0",
+    "prettier-plugin-astro": "^0.14.0",
+    "eslint": "^9.0.0"
+  }
+}

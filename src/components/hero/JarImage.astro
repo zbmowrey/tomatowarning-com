@@ -1,0 +1,80 @@
+---
+/**
+ * JarImage.astro — Single jar render with Astro Image optimization.
+ * Falls back to an EF-color placeholder div when jarImage path is absent
+ * (real renders delivered by P1-15, not yet available at build time).
+ */
+import { Image } from 'astro:assets';
+
+interface Props {
+  /** Path to jar image asset. When empty/undefined, renders EF-color placeholder. */
+  src?: string;
+  alt: string;
+  efLevel: number;
+  efColor: string;
+  /** Width in px for Astro Image and placeholder sizing */
+  width?: number;
+  /** Height in px for Astro Image and placeholder sizing */
+  height?: number;
+  /** Load eagerly + fetchpriority="high" for above-the-fold hero images */
+  eager?: boolean;
+  class?: string;
+}
+
+const {
+  src,
+  alt,
+  efLevel,
+  efColor,
+  width = 240,
+  height = 320,
+  eager = false,
+  class: className,
+} = Astro.props;
+
+const hasImage = src && src.trim() !== '';
+---
+
+{hasImage ? (
+  <Image
+    src={src}
+    alt={alt}
+    width={width}
+    height={height}
+    loading={eager ? 'eager' : 'lazy'}
+    fetchpriority={eager ? 'high' : 'auto'}
+    class:list={['jar-image', className]}
+    style={`width: ${width}px; height: ${height}px; object-fit: cover;`}
+  />
+) : (
+  <div
+    class:list={['jar-placeholder', className]}
+    style={`background-color: ${efColor}; width: ${width}px; height: ${height}px;`}
+    role="img"
+    aria-label={alt}
+  >
+    <span class="jar-placeholder-label" aria-hidden="true">EF-{efLevel}</span>
+  </div>
+)}
+
+<style>
+  .jar-image {
+    border-radius: 6px;
+    display: block;
+  }
+
+  .jar-placeholder {
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .jar-placeholder-label {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.55);
+    letter-spacing: 0.05em;
+  }
+</style>
