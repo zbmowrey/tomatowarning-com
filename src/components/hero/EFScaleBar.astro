@@ -65,6 +65,24 @@ const gradientStops = [
     height: 6px;
     border-radius: 3px;
     margin-bottom: 1.5rem;
+    position: relative;
+  }
+  
+  .scale-gradient::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 3px;
+    background: inherit;
+    filter: blur(8px);
+    opacity: 0.6;
+    animation: storm-pulse 3s infinite ease-in-out;
+    z-index: -1;
+  }
+  
+  @keyframes storm-pulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.8; transform: scaleY(1.5); }
   }
 
   .scale-jars {
@@ -84,6 +102,16 @@ const gradientStops = [
     gap: 0.75rem;
     flex: 1;
     min-width: 0;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: default;
+  }
+  
+  .scale-jar-item:hover {
+    transform: translateY(-8px) scale(1.03);
+  }
+  
+  .scale-jar-item:hover .scale-ef-badge {
+    color: var(--radar-teal);
   }
 
   .scale-label {
@@ -101,6 +129,7 @@ const gradientStops = [
     text-transform: uppercase;
     color: var(--premium-white);
     opacity: 0.9;
+    transition: color 0.3s ease;
   }
 
   .scale-product-name {

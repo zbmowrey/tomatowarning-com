@@ -49,14 +49,15 @@ const productHref = `/products/${product.slug}/`;
   .product-card {
     border-radius: 8px;
     overflow: hidden;
-    background: #fff;
-    box-shadow: 0 2px 8px rgba(44, 44, 44, 0.1);
+    background: var(--premium-white);
+    border-top: 2px solid var(--accent-gold);
+    box-shadow: 0 4px 12px rgba(44, 44, 44, 0.08);
     transition: transform 0.2s, box-shadow 0.2s;
   }
 
   .product-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(44, 44, 44, 0.15);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(44, 44, 44, 0.12);
   }
 
   .card-link {
@@ -95,7 +96,8 @@ const productHref = `/products/${product.slug}/`;
 
   .card-name {
     font-size: 1.25rem;
-    font-weight: 700;
+    font-weight: 800;
+    letter-spacing: -0.02em;
     margin: 0;
     color: var(--storm-charcoal);
   }

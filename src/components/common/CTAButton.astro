@@ -21,31 +21,40 @@ const { href, variant = 'primary', text } = Astro.props;
 <style>
   .cta-button {
     display: inline-block;
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem 1.75rem;
     font-weight: 700;
     text-decoration: none;
-    border-radius: 4px;
-    transition: opacity 0.15s, transform 0.1s;
+    border-radius: 6px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     cursor: pointer;
   }
 
   .cta-button:hover {
-    opacity: 0.9;
-    transform: translateY(-1px);
+    transform: translateY(-2px) scale(1.02);
   }
 
   .cta-button:active {
-    transform: translateY(0);
+    transform: translateY(0) scale(0.98);
   }
 
   .cta-primary {
-    background-color: var(--radar-teal);
-    color: #fff;
+    background-color: var(--ef-color-3); /* Rust red / Roasted Pepper */
+    color: var(--premium-white);
+    box-shadow: 0 4px 14px rgba(139, 37, 0, 0.25);
+  }
+  
+  .cta-primary:hover {
+    box-shadow: 0 6px 20px rgba(139, 37, 0, 0.4);
   }
 
   .cta-secondary {
     background-color: transparent;
-    color: var(--storm-charcoal);
-    border: 2px solid var(--storm-charcoal);
+    color: var(--premium-white);
+    border: 2px solid var(--premium-white);
+    backdrop-filter: blur(4px);
+  }
+  
+  .cta-secondary:hover {
+    background-color: rgba(245, 240, 235, 0.1);
   }
 </style>

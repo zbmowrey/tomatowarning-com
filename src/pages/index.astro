@@ -25,7 +25,7 @@ const organizationJsonLd = {
 ---
 
 <PageLayout
-  title="Tomato Warning — Rated by the Storm."
+  title="Tomato Warning — Flavor on the Radar."
   description="Small-batch hot sauces built around Florida's EF rating system. From a gentle gust to total devastation. Five levels. All storm."
   canonicalPath="/"
   structuredData={organizationJsonLd}
@@ -46,25 +46,6 @@ const organizationJsonLd = {
     </section>
   )}
 
-  <section class="signup-section" aria-labelledby="signup-heading">
-    <div class="signup-inner">
-      <h2 id="signup-heading" class="signup-heading">Get Early Access</h2>
-      <p class="signup-sub">Be first to know when Tomato Warning launches.</p>
-      <div class="signup-form-wrap">
-        <ConsumerSignupForm
-          client:visible
-          formEndpoint={FORM_ENDPOINT}
-          listId={consumerFormConfig.listId}
-          analyticsEvent="consumer_signup"
-          successMessage={consumerFormConfig.successMessage}
-          alreadySubscribedMessage={consumerFormConfig.alreadySubscribedMessage}
-          noscriptFallbackUrl={consumerFormConfig.noscriptFallbackUrl}
-          showZipCode={true}
-          privacyPolicyUrl="/privacy/"
-        />
-      </div>
-    </div>
-  </section>
 
   <FooterSignupForm
     slot="footer-form"
@@ -113,34 +94,5 @@ const organizationJsonLd = {
     gap: 2rem;
   }
 
-  .signup-section {
-    padding: 5rem 1.5rem;
-    background: var(--storm-charcoal);
-    color: var(--premium-white);
-  }
 
-  .signup-inner {
-    max-width: 480px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .signup-heading {
-    font-size: 2rem;
-    font-weight: 800;
-    margin: 0;
-    color: var(--premium-white);
-  }
-
-  .signup-sub {
-    font-size: 1.125rem;
-    opacity: 0.75;
-    margin: 0;
-  }
-
-  .signup-form-wrap {
-    margin-top: 0.5rem;
-  }
 </style>

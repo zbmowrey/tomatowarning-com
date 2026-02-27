@@ -110,7 +110,7 @@ export function NonprofitSignupForm({
         )}
         <FormField name="location" label="Location (city, state)" type="text" required value={location} onInput={setLocation} error={errors.location} autoComplete="address-level2" />
         <FormField name="campaignSize" label="Campaign size (optional)" type="text" value={campaignSize} onInput={setCampaignSize} error={errors.campaignSize} />
-        <button type="submit" disabled={status === 'submitting'} class="bg-blue-600 text-white rounded px-4 py-2 font-semibold disabled:opacity-50">
+        <button type="submit" disabled={status === 'submitting'} class="bg-[var(--ef-color-3)] text-white rounded px-4 py-2 font-semibold shadow-md hover:shadow-lg hover:brightness-110 transition-all disabled:opacity-50">
           {status === 'submitting' ? 'Submitting…' : 'Submit Application'}
         </button>
         <p class="text-sm text-gray-600">

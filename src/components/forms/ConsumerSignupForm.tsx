@@ -116,7 +116,7 @@ export function ConsumerSignupForm({
         <button
           type="submit"
           disabled={status === 'submitting'}
-          class="bg-blue-600 text-white rounded px-4 py-2 font-semibold disabled:opacity-50"
+          class="bg-[var(--ef-color-3)] text-white rounded px-4 py-2 font-semibold shadow-md hover:shadow-lg hover:brightness-110 transition-all disabled:opacity-50"
         >
           {status === 'submitting' ? 'Signing up…' : 'Notify Me'}
         </button>

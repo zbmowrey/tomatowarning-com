@@ -7,21 +7,37 @@
  */
 import EFScaleBar from './EFScaleBar.astro';
 import CTAButton from '@/components/common/CTAButton.astro';
+import { Picture } from 'astro:assets';
+import stormBg from '@/assets/images/hero/storm-bg-panoramic.png';
 ---
 
 <section class="hero-section" aria-labelledby="hero-headline">
+  <div class="hero-bg-wrapper">
+    <Picture 
+      src={stormBg} 
+      alt="Dark cinematic storm clouds building on the horizon" 
+      widths={[640, 960, 1280, 1920, 2560]}
+      sizes="100vw"
+      formats={['avif', 'webp']}
+      fallbackFormat="png"
+      pictureAttributes={{ class: 'hero-bg-picture' }}
+      class="hero-bg-image" 
+      loading="eager"
+      fetchpriority="high"
+    />
+    <div class="hero-bg-overlay"></div>
+  </div>
+  <div class="hero-texture" aria-hidden="true"></div>
   <div class="hero-inner">
     <div class="hero-copy">
-      <p class="hero-eyebrow">Small-batch Florida salsa</p>
+      <p class="hero-eyebrow">Family-Owned Artisanal Salsa</p>
 
       <h1 id="hero-headline" class="hero-headline">
-        Finally, a heat scale<br />that means something.
+        Controlled Chaos.
       </h1>
 
       <p class="hero-subheadline">
-        Five heat levels. One consistent standard.
-        From 500 to 500,000 Scoville — every batch verified,
-        every jar exactly where it should be on the scale.
+        Five distinct classes of intensity, from coastal calm to absolute devastation. Every batch tested, every jar exactly where it should be on the scale. No guesswork — just pure flavor and predictable heat.
       </p>
 
       <div class="hero-ef-definition" aria-label="What is the EF scale?">
@@ -52,6 +68,62 @@ import CTAButton from '@/components/common/CTAButton.astro';
     min-height: 80vh;
     display: flex;
     align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero-bg-wrapper {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  
+  .hero-bg-picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .hero-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 60%; /* Balances sky and horizon */
+  }
+  
+  /* On ultrawide monitors, shift focus slightly up to ensure the storm drama isn't cropped out completely */
+  @media (min-aspect-ratio: 16/9) {
+    .hero-bg-image {
+      object-position: center 35%;
+    }
+  }
+  
+  @media (min-aspect-ratio: 21/9) {
+    .hero-bg-image {
+      object-position: center 25%;
+    }
+  }
+  
+  .hero-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(44, 44, 44, 0.4) 0%,
+      rgba(44, 44, 44, 0.8) 50%,
+      rgba(44, 44, 44, 0.95) 100%
+    );
+  }
+
+  .hero-texture {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    background-image: radial-gradient(var(--accent-gold) 1px, transparent 1px);
+    background-size: 32px 32px;
+    background-position: -16px -16px;
+    opacity: 0.05;
   }
 
   .hero-inner {
@@ -68,22 +140,37 @@ import CTAButton from '@/components/common/CTAButton.astro';
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    position: relative;
+    z-index: 10;
+    animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   .hero-eyebrow {
     font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
+    font-weight: 800;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--radar-teal);
+    color: var(--accent-gold);
     margin: 0;
   }
 
   .hero-headline {
     font-size: clamp(3rem, 7vw, 5.5rem);
     font-weight: 800;
-    line-height: 1;
-    letter-spacing: -0.03em;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
     margin: 0;
     color: var(--premium-white);
   }
@@ -97,19 +184,19 @@ import CTAButton from '@/components/common/CTAButton.astro';
   }
 
   .hero-ef-definition {
-    border-left: 3px solid var(--radar-teal);
-    padding-left: 1rem;
+    border-left: 3px solid var(--accent-gold);
+    padding-left: 1.25rem;
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
+    gap: 0.35rem;
   }
 
   .ef-definition-label {
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--radar-teal);
+    color: var(--accent-gold);
   }
 
   .ef-definition-text {
@@ -128,6 +215,8 @@ import CTAButton from '@/components/common/CTAButton.astro';
 
   .hero-scale-wrap {
     padding: 1rem 0;
+    position: relative;
+    z-index: 10;
   }
 
   /* Responsive: stack on smaller screens */

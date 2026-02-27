@@ -53,7 +53,7 @@ export function FormField({
         {...sharedProps}
         value={value}
         onInput={(e) => onInput((e.target as HTMLSelectElement).value)}
-        class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        class="w-full border border-storm-charcoal/20 rounded-md px-3 py-2 bg-white/70 focus:outline-none focus:ring-2 focus:ring-accent-gold focus:border-accent-gold transition-all duration-200"
       >
         <option value="">Select…</option>
         {options?.map((opt) => (
@@ -71,7 +71,7 @@ export function FormField({
         maxLength={maxLength}
         minLength={minLength}
         onInput={(e) => onInput((e.target as HTMLTextAreaElement).value)}
-        class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-y"
+        class="w-full border border-storm-charcoal/20 rounded-md px-3 py-2 bg-white/70 focus:outline-none focus:ring-2 focus:ring-accent-gold focus:border-accent-gold transition-all duration-200 resize-y"
         rows={4}
       />
     );
@@ -86,7 +86,7 @@ export function FormField({
         maxLength={maxLength}
         minLength={minLength}
         onInput={(e) => onInput((e.target as HTMLInputElement).value)}
-        class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        class="w-full border border-storm-charcoal/20 rounded-md px-3 py-2 bg-white/70 focus:outline-none focus:ring-2 focus:ring-accent-gold focus:border-accent-gold transition-all duration-200"
       />
     );
   }

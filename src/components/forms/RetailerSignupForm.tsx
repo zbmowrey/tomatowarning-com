@@ -109,7 +109,7 @@ export function RetailerSignupForm({
           <FormField name="roleOther" label="Describe your role" type="text" required value={roleOther} onInput={setRoleOther} error={errors.roleOther} />
         )}
         <FormField name="message" label="Message (optional)" type="textarea" value={message} onInput={setMessage} error={errors.message} maxLength={500} />
-        <button type="submit" disabled={status === 'submitting'} class="bg-blue-600 text-white rounded px-4 py-2 font-semibold disabled:opacity-50">
+        <button type="submit" disabled={status === 'submitting'} class="bg-[var(--ef-color-3)] text-white rounded px-4 py-2 font-semibold shadow-md hover:shadow-lg hover:brightness-110 transition-all disabled:opacity-50">
           {status === 'submitting' ? 'Sending…' : 'Submit Inquiry'}
         </button>
         <p class="text-sm text-gray-600">

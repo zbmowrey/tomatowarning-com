@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: 'Tomato Warning',
-  tagline: 'Rated by the Storm.',
+  tagline: 'Flavor on the Radar.',
   url: 'https://tomatowarning.com',
   brandColors: {
     stormCharcoal: '#2C2C2C',

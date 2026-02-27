@@ -97,9 +97,13 @@ export function FooterSignupForm({
   return (
     <form onSubmit={handleSubmit} noValidate>
       <div class="flex flex-col gap-3">
+        <h3 class="text-xl font-bold text-[var(--premium-white)] m-0 tracking-tight">Join the Warning Path</h3>
+        <p class="text-[var(--premium-white)] opacity-80 m-0 mb-2 text-sm leading-relaxed">
+          Sign up to be the first to know when the latest small batches drop, get exclusive access to reserve jars, and receive updates directly from the weather center.
+        </p>
         <FormField name="email" label="Email address" type="email" required value={email} onInput={setEmail} error={errors.email} inputMode="email" autoComplete="email" />
         <FormField name="audienceType" label="I am a…" type="select" required value={audienceType} onInput={setAudienceType} error={errors.audienceType} options={audienceOptions} />
-        <button type="submit" disabled={status === 'submitting'} class="bg-blue-600 text-white rounded px-4 py-2 font-semibold disabled:opacity-50">
+        <button type="submit" disabled={status === 'submitting'} class="bg-[var(--ef-color-3)] text-white rounded px-4 py-2 font-semibold shadow-md hover:shadow-lg hover:brightness-110 transition-all disabled:opacity-50">
           {status === 'submitting' ? 'Signing up…' : 'Sign Up'}
         </button>
         <p class="text-sm text-gray-600">

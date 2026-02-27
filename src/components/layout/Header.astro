@@ -1,12 +1,17 @@
 ---
 import { siteConfig } from '@/config/site';
+import { Image } from 'astro:assets';
+import logoGraphic from '@/assets/images/logo.png';
 ---
 
 <header class="site-header">
   <div class="header-inner">
     <a href="/" class="logo" aria-label={`${siteConfig.name} — Home`}>
-      <span class="logo-text">{siteConfig.name}</span>
-      <span class="logo-tagline">{siteConfig.tagline}</span>
+      <Image src={logoGraphic} alt="Tomato Warning Logo" class="logo-image" width={48} height={48} loading="eager" />
+      <div class="logo-text-group">
+        <span class="logo-text">{siteConfig.name}</span>
+        <span class="logo-tagline">{siteConfig.tagline}</span>
+      </div>
     </a>
 
     <nav aria-label="Primary navigation" class="desktop-nav">
@@ -30,11 +35,13 @@ import { siteConfig } from '@/config/site';
 
 <style>
   .site-header {
-    background-color: var(--storm-charcoal);
-    color: var(--premium-white);
+    background-color: var(--premium-white);
+    color: var(--storm-charcoal);
     position: sticky;
     top: 0;
     z-index: 100;
+    border-bottom: 2px solid var(--accent-gold);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   }
 
   .header-inner {
@@ -49,9 +56,22 @@ import { siteConfig } from '@/config/site';
 
   .logo {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
     text-decoration: none;
-    color: var(--premium-white);
+    color: var(--storm-charcoal);
+  }
+  
+  .logo-image {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+  }
+  
+  .logo-text-group {
+    display: flex;
+    flex-direction: column;
   }
 
   .logo-text {
@@ -77,15 +97,16 @@ import { siteConfig } from '@/config/site';
   }
 
   .desktop-nav a {
-    color: var(--premium-white);
+    color: var(--storm-charcoal);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     opacity: 0.85;
-    transition: opacity 0.15s;
+    transition: all 0.2s ease;
   }
 
   .desktop-nav a:hover {
     opacity: 1;
+    color: var(--accent-gold);
   }
 
   .hamburger {
@@ -100,7 +121,7 @@ import { siteConfig } from '@/config/site';
     display: block;
     width: 24px;
     height: 2px;
-    background: var(--premium-white);
+    background: var(--storm-charcoal);
     border-radius: 2px;
   }
 

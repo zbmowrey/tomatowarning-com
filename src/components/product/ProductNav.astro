@@ -1,0 +1,103 @@
+---
+interface Props {
+  prevProduct: {
+    name: string;
+    slug: string;
+    efLevel: number;
+  } | null;
+  nextProduct: {
+    name: string;
+    slug: string;
+    efLevel: number;
+  } | null;
+}
+
+const { prevProduct, nextProduct } = Astro.props;
+---
+
+<nav class="product-nav" aria-label="Product navigation">
+  <div class="product-nav-inner">
+    {prevProduct ? (
+      <a href={`/products/${prevProduct.slug}/`} class="nav-link prev">
+        <span class="nav-label">Previous</span>
+        <span class="nav-title">EF-{prevProduct.efLevel} {prevProduct.name}</span>
+      </a>
+    ) : (
+      <div class="nav-placeholder"></div>
+    )}
+
+    {nextProduct ? (
+      <a href={`/products/${nextProduct.slug}/`} class="nav-link next">
+        <span class="nav-label">Next</span>
+        <span class="nav-title">EF-{nextProduct.efLevel} {nextProduct.name}</span>
+      </a>
+    ) : (
+      <div class="nav-placeholder"></div>
+    )}
+  </div>
+</nav>
+
+<style>
+  .product-nav {
+    background: var(--premium-white);
+    border-top: 1px solid rgba(44, 44, 44, 0.1);
+  }
+
+  .product-nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 120px;
+  }
+
+  .nav-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    text-decoration: none;
+    color: var(--storm-charcoal);
+    transition: background-color 0.2s, color 0.2s;
+  }
+
+  .nav-link.next {
+    text-align: right;
+    border-left: 1px solid rgba(44, 44, 44, 0.1);
+  }
+
+  .nav-link:hover {
+    background-color: var(--accent-gold);
+    color: var(--premium-white);
+  }
+  
+  .nav-link:hover .nav-label {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .nav-label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    margin-bottom: 0.5rem;
+    transition: color 0.2s;
+  }
+
+  .nav-title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+
+  @media (max-width: 600px) {
+    .nav-link {
+      padding: 1.5rem 1rem;
+    }
+    .nav-title {
+      font-size: 1.125rem;
+    }
+  }
+</style>

@@ -5,10 +5,11 @@
  * (real renders delivered by P1-15, not yet available at build time).
  */
 import { Image } from 'astro:assets';
+import defaultJar from '@/assets/images/hero/jar-mockup.png';
 
 interface Props {
   /** Path to jar image asset. When empty/undefined, renders EF-color placeholder. */
-  src?: string;
+  src: string;
   alt: string;
   efLevel: number;
   efColor: string;
@@ -26,17 +27,19 @@ const {
   alt,
   efLevel,
   efColor,
-  width = 240,
-  height = 320,
+  width = 200,
+  height = 260,
   eager = false,
   class: className,
 } = Astro.props;
 
+// If the source looks like a default/mock or missing path, we use our premium default jar
 const hasImage = src && src.trim() !== '';
+const isMockup = hasImage && (src.includes('placeholder') || src.includes('mockup'));
 ---
 
-{hasImage ? (
-  <Image
+{hasImage && !isMockup ? (
+  <img
     src={src}
     alt={alt}
     width={width}
@@ -47,14 +50,16 @@ const hasImage = src && src.trim() !== '';
     style={`width: ${width}px; height: ${height}px; object-fit: cover;`}
   />
 ) : (
-  <div
-    class:list={['jar-placeholder', className]}
-    style={`background-color: ${efColor}; width: ${width}px; height: ${height}px;`}
-    role="img"
-    aria-label={alt}
-  >
-    <span class="jar-placeholder-label" aria-hidden="true">EF-{efLevel}</span>
-  </div>
+  <img
+    src={defaultJar.src}
+    alt={alt || 'Premium hot sauce jar mockup'}
+    width={width}
+    height={height}
+    loading={eager ? 'eager' : 'lazy'}
+    fetchpriority={eager ? 'high' : 'auto'}
+    class:list={['jar-image', className]}
+    style={`width: ${width}px; height: ${height}px; object-fit: cover;`}
+  />
 )}
 
 <style>

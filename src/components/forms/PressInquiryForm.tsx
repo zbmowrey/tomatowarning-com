@@ -84,7 +84,7 @@ export function PressInquiryForm({
         <FormField name="email" label="Email address" type="email" required value={email} onInput={setEmail} error={errors.email} inputMode="email" autoComplete="email" />
         <FormField name="outlet" label="Outlet or publication" type="text" value={outlet} onInput={setOutlet} error={errors.outlet} autoComplete="organization" />
         <FormField name="message" label="Message" type="textarea" required value={message} onInput={setMessage} error={errors.message} minLength={10} />
-        <button type="submit" disabled={status === 'submitting'} class="bg-blue-600 text-white rounded px-4 py-2 font-semibold disabled:opacity-50">
+        <button type="submit" disabled={status === 'submitting'} class="bg-[var(--ef-color-3)] text-white rounded px-4 py-2 font-semibold shadow-md hover:shadow-lg hover:brightness-110 transition-all disabled:opacity-50">
           {status === 'submitting' ? 'Sending…' : 'Send Inquiry'}
         </button>
         <p class="text-sm text-gray-600">
