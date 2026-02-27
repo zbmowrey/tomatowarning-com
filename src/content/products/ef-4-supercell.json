@@ -6,7 +6,20 @@
   "heatDescriptor": "Rotation confirmed — deep, relentless, rewarding",
   "scovilleMin": 25000,
   "scovilleMax": 100000,
-  "keyIngredients": ["ghost pepper", "black garlic"],
+  "keyIngredients": [
+    "ghost pepper",
+    "black garlic"
+  ],
   "efColor": "#5C0A0A",
+  "jarImage": "/images/products/ef-4-supercell.png",
+  "jarImageAlt": "Jar of Tomato Warning Supercell EF-4 hot sauce with a dark crimson label",
+  "productStory": "A supercell doesn't sneak up on you. You watch it form, you feel the pressure change, and when it arrives, it has your full attention. Ghost pepper brings the rotation. Black garlic adds the kind of deep, savory undertow that keeps you coming back even when your better judgment says stop.",
+  "pairings": [
+    "Charred ribeye steak",
+    "Slow-smoked ribs with a dry rub",
+    "Dark chocolate and aged cheddar board",
+    "Braised short ribs",
+    "A smoky mezcal cocktail"
+  ],
   "status": "draft"
 }

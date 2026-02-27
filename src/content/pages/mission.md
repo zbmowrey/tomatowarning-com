@@ -8,9 +8,15 @@ lastUpdated: 2026-02-26
 
 # Our Mission
 
-## Origin Story
+## How It Started
 
-[Placeholder: Founding story — how a passion for Florida's wild weather seasons and locally-grown tomatoes sparked the idea for Tomato Warning. Connection to the community, the land, and the heat.]
+During a summer storm in Florida, a three-year-old boy named Max looked up at his dad and said, "Daddy, we have a Tomato Warning."
+
+He meant tornado. But in that moment, something clicked. Tomato Warning became more than a mispronunciation — it became a name, a brand, and eventually a lineup of hot sauces built around Florida's storm culture.
+
+We started making sauce the way most good ideas start: in the kitchen, with too many peppers and not enough jars. Friends tried it. Friends came back for more. The recipes got tighter, the heat levels got mapped to the Enhanced Fujita scale, and what began as a family joke turned into something worth sharing.
+
+Tomato Warning is a Florida company. Our tomatoes come from Florida farms. Our recipes were developed here. And every bottle carries a little bit of that afternoon when Max thought the sky was full of tomatoes.
 
 ## The EF Rating System
 
@@ -24,14 +30,30 @@ Our sauces are rated using the Enhanced Fujita (EF) scale — the same system me
 | EF-4 | Supercell | 25,000–100,000 | Rotation confirmed |
 | EF-5 | Ground Zero | 100,000–500,000 | Total devastation |
 
+Every batch is tested and verified against its Scoville range before it ships. The EF number on the label isn't marketing — it's a promise. You'll always know exactly what kind of storm you're walking into.
+
 ## Our Giving Structure
 
-[Placeholder: Details about charity partnerships, percentage of proceeds donated, and how the giving program works. This section will be populated when the charity partner agreement is finalized.]
+A portion of every sale goes directly to community organizations doing real work in the places where our sauces are sold. We are still finalizing our primary charity partnership, and when we do, you'll find the details here — who they are, what they do, and exactly how your purchase supports them.
+
+Here's what we've already committed to:
+
+- **Transparency over gestures.** We will publish how much money goes where. No vague language, no rounding up, no "a portion of proceeds" without numbers attached.
+- **Local impact first.** Funds will support organizations working in Florida communities — the same communities that inspired this company.
+- **No charity theater.** We are not interested in putting a ribbon on a label and calling it a day. If we can't tell you exactly how it works, we won't claim that it does.
+
+This section will be updated when our partnership is finalized.
 
 ## Community Impact
 
-[Placeholder: How Tomato Warning supports local Florida communities — youth sports organizations, schools, nonprofits. The nonprofit signup form allows qualifying organizations to apply for donated product.]
+Tomato Warning isn't just sold in stores — it's built into the communities we serve.
+
+- **Nonprofit fundraising program.** Qualifying nonprofits, youth sports organizations, and schools can apply through our [nonprofit signup form](/nonprofits/) to receive donated product for fundraisers and events.
+- **Local retailer partnerships.** We work with independent retailers who share our commitment to quality and community. If you're a shop owner interested in carrying Tomato Warning, visit our [retailer page](/retailers/).
+- **Direct community support.** As we grow, we'll expand our giving to include sponsorships, event partnerships, and direct donations to organizations making a measurable difference.
 
 ## Join the Storm
 
-[Placeholder: Call to action linking to the product lineup and consumer sign-up form.]
+Tomato Warning is just getting started. Whether you're here for the flavor, the heat, or the story behind the name — we're glad you found us.
+
+[Explore the full lineup](/products/) and find your EF level. If you want to hear from us as we grow, [sign up for updates](/#signup). And if your organization could benefit from a partnership, [tell us about it](/nonprofits/).

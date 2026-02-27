@@ -16,6 +16,8 @@ const productsCollection = defineCollection({
     jarImageAlt: z.string().optional(),
     metaTitle: z.string().optional(),
     metaDescription: z.string().max(160).optional(),
+    productStory: z.string().optional(),
+    pairings: z.array(z.string()).optional(),
     status: z.enum(['published', 'draft']).default('draft'),
   }),
 });
@@ -29,6 +31,7 @@ const pagesCollection = defineCollection({
     status: z.enum(['published', 'draft']),
     lastUpdated: z.coerce.date(),
     noIndex: z.boolean().optional().default(false),
+    charityPartnerName: z.string().optional(),
   }),
 });
 

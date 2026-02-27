@@ -6,7 +6,20 @@
   "heatDescriptor": "Building on the horizon — smoke, depth, and your first real tingle",
   "scovilleMin": 1500,
   "scovilleMax": 5000,
-  "keyIngredients": ["chipotle peppers", "serrano peppers"],
+  "keyIngredients": [
+    "chipotle peppers",
+    "serrano peppers"
+  ],
   "efColor": "#CC5500",
+  "jarImage": "/images/products/ef-2-gulf-breeze.png",
+  "jarImageAlt": "Jar of Tomato Warning Gulf Breeze EF-2 hot sauce with a burnt orange label",
+  "productStory": "Gulf Breeze is what happens when the barometer starts dropping but the sky is still beautiful. Chipotle smoke rolls in low and slow, serrano brings the first real tingle, and roasted tomato holds the whole thing together. You can see the storm building on the horizon — and you don't look away.",
+  "pairings": [
+    "Pulled pork sandwiches",
+    "Black bean and rice bowls",
+    "Smoked brisket",
+    "Quesadillas with pepper jack",
+    "A cold lager"
+  ],
   "status": "draft"
 }

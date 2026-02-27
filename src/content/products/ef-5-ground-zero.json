@@ -6,7 +6,20 @@
   "heatDescriptor": "Total devastation — for the few who dare",
   "scovilleMin": 100000,
   "scovilleMax": 500000,
-  "keyIngredients": ["Carolina Reaper", "Trinidad Moruga Scorpion"],
+  "keyIngredients": [
+    "Carolina Reaper",
+    "Trinidad Moruga Scorpion"
+  ],
   "efColor": "#1C0A0A",
+  "jarImage": "/images/products/ef-5-ground-zero.png",
+  "jarImageAlt": "Jar of Tomato Warning Ground Zero EF-5 hot sauce with a near-black label",
+  "productStory": "Ground Zero isn't a dare. It's a destination. Carolina Reaper and Trinidad Moruga Scorpion don't apologize, and neither do we. The charred tomato base gives it just enough structure to remind you this is still food — and then the storm takes everything else. You were warned.",
+  "pairings": [
+    "A single brave tortilla chip",
+    "Chili con carne for the fearless",
+    "Hot wings that needed to be hotter",
+    "Bloody Mary — if you dare",
+    "Bragging rights"
+  ],
   "status": "draft"
 }

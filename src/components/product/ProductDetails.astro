@@ -4,6 +4,8 @@ interface Props {
     flavorHeadline: string;
     heatDescriptor: string;
     keyIngredients: [string, string];
+    productStory?: string;
+    pairings?: string[];
   };
 }
 
@@ -31,6 +33,26 @@ const { product } = Astro.props;
       </ul>
     </div>
   </div>
+
+  {product.productStory && (
+    <div class="story-section">
+      <h2 class="section-label">The Story</h2>
+      <blockquote class="product-story">
+        {product.productStory}
+      </blockquote>
+    </div>
+  )}
+
+  {product.pairings && product.pairings.length > 0 && (
+    <div class="pairings-section">
+      <h2 class="section-label">Pairs With</h2>
+      <div class="pairings-list">
+        {product.pairings.map((pairing) => (
+          <span class="pairing-pill">{pairing}</span>
+        ))}
+      </div>
+    </div>
+  )}
 </section>
 
 <style>
@@ -84,5 +106,41 @@ const { product } = Astro.props;
     position: absolute;
     left: 0;
     color: var(--radar-teal);
+  }
+
+  .story-section {
+    max-width: 1200px;
+    margin: 2.5rem auto 0;
+  }
+
+  .product-story {
+    border-left: 3px solid var(--radar-teal);
+    padding: 1rem 1.5rem;
+    margin: 0;
+    font-style: italic;
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: var(--storm-charcoal);
+  }
+
+  .pairings-section {
+    max-width: 1200px;
+    margin: 2.5rem auto 0;
+  }
+
+  .pairings-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .pairing-pill {
+    display: inline-block;
+    padding: 0.375rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    color: var(--storm-charcoal);
+    background: rgba(0, 178, 169, 0.08);
+    border: 1px solid rgba(0, 178, 169, 0.2);
   }
 </style>

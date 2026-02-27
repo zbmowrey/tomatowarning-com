@@ -11,7 +11,7 @@ if (!entry) {
 
 // Build-time validation: fail if published without a charity partner name
 if (entry.data.status === 'published') {
-  const charityPartnerName = (entry.data as Record<string, unknown>).charityPartnerName;
+  const charityPartnerName = entry.data.charityPartnerName;
   if (!charityPartnerName || String(charityPartnerName).trim() === '') {
     throw new Error(
       '[Mission Page] Build error: mission page is set to "published" but charityPartnerName is empty. ' +

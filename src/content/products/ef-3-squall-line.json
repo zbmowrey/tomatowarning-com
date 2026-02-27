@@ -6,7 +6,20 @@
   "heatDescriptor": "The storm is here — tropical sweetness chased by real heat",
   "scovilleMin": 5000,
   "scovilleMax": 25000,
-  "keyIngredients": ["habanero peppers", "tropical mango"],
+  "keyIngredients": [
+    "habanero peppers",
+    "tropical mango"
+  ],
   "efColor": "#8B2500",
+  "jarImage": "/images/products/ef-3-squall-line.png",
+  "jarImageAlt": "Jar of Tomato Warning Squall Line EF-3 hot sauce with a deep red label",
+  "productStory": "When a squall line rolls through, you hear it before you see it. That's this sauce — habanero heat arriving fast, then mango stepping in like sunshine through a break in the clouds. It's the moment the storm gets interesting and you realize you're not going inside.",
+  "pairings": [
+    "Grilled mahi-mahi tacos",
+    "Jerk chicken with coconut rice",
+    "Mango and black bean salad",
+    "Caribbean pork chops",
+    "A spicy margarita"
+  ],
   "status": "draft"
 }

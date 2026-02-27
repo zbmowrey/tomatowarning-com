@@ -6,7 +6,20 @@
   "heatDescriptor": "A gentle gust — big flavor, little fire",
   "scovilleMin": 500,
   "scovilleMax": 1500,
-  "keyIngredients": ["poblano peppers", "cilantro"],
+  "keyIngredients": [
+    "poblano peppers",
+    "cilantro"
+  ],
   "efColor": "#D4A017",
+  "jarImage": "/images/products/ef-1-coastal-calm.png",
+  "jarImageAlt": "Jar of Tomato Warning Coastal Calm EF-1 hot sauce with a golden-yellow label",
+  "productStory": "Coastal Calm started the way every good Florida afternoon does — sun on the water, a breeze off the Gulf, and absolutely no reason to rush. We built this sauce for the people who want every ingredient to show up and say hello. Think of it as the calm before the storm, except the calm is the whole point.",
+  "pairings": [
+    "Fish tacos with lime slaw",
+    "Scrambled eggs and avocado toast",
+    "Grilled shrimp skewers",
+    "Fresh oysters on the half shell",
+    "Chips and guacamole"
+  ],
   "status": "draft"
 }
