@@ -130,7 +130,7 @@ interface PageMeta {
 // src/config/site.ts
 interface SiteConfig {
   name: string;                // "Tomato Warning"
-  tagline: string;             // "Rated by the Storm."
+  tagline: string;             // "Chase the storm."
   url: string;                 // "https://tomatowarning.com"
   defaultOgImage: string;      // "/images/og-default.jpg"
   brandColors: {
@@ -345,7 +345,7 @@ interface PressInquiryPayload {
 | P4-01 | `src/components/hero/JarImage.astro` | Single jar render: Astro `<Image>`, responsive srcset, `eager`/`fetchpriority="high"` option for hero, explicit width/height | S10 AC2, S8 AC1 | P1-01 |
 | P4-02 | `src/components/hero/EFScaleBar.astro` | Horizontal bar: CSS gradient #D4A017→#1C0A0A, 5 JarImage positions (all eager), "EF-1"…"EF-5" text labels, styled placeholder if render missing, `aria-label` | S10 AC2, AC5, edge cases | P4-01, P2-01..05 |
 | P4-03 | `src/components/hero/HeroSection.astro` | Full hero: `<h1>` headline, sub-copy (Scoville + batch consistency), EF definition, EFScaleBar, CTA to `/mission/`. Static, no JS. | S10 AC1-AC6 | P4-02, P1-08 |
-| P4-04 | `src/pages/index.astro` | Homepage: HeroSection, product grid (ProductCards), ConsumerSignupForm island, Organization JSON-LD. Title: "Tomato Warning — Rated by the Storm" | S10, S8 | P1-14, P4-03, P2-11, P3-07 |
+| P4-04 | `src/pages/index.astro` | Homepage: HeroSection, product grid (ProductCards), ConsumerSignupForm island, Organization JSON-LD. Title: "Tomato Warning — Premium Salsa | Chase the Storm" | S10, S8 | P1-14, P4-03, P2-11, P3-07 |
 
 **Design decision:** Hero content (headline, sub-copy, CTA) hardcoded in `HeroSection.astro` or `src/config/site.ts` rather than a separate `hero.yaml` data file. The data model's `hero.yaml` is unnecessary for content that only changes with code deployments.
 

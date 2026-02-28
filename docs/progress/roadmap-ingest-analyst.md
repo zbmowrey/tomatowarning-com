@@ -46,7 +46,7 @@ Items are kept separate when:
 #### Group 2: Trademark Search
 **Source ideas:** Product names dependency (ideas #6-10), tagline dependency (idea #12), Open Question #3
 **Why grouped:** All five product names plus the brand name plus the tagline need trademark clearance simultaneously. A single trademark attorney engagement covers all of them.
-**Output:** Trademark clearance report for: "Tomato Warning," "Coastal Calm," "Gulf Breeze," "Squall Line," "Supercell," "Ground Zero," "Rated by the storm."
+**Output:** Trademark clearance report for: "Tomato Warning," "Coastal Calm," "Gulf Breeze," "Squall Line," "Supercell," "Ground Zero," "Chase the storm."
 **Effort:** S (1-2 days — attorney engagement + review)
 
 ---

@@ -18,7 +18,7 @@ updated: 2026-02-26
 Finalize the primary tagline and all five EF-level product names after trademark clearance.
 
 ## Recommended Tagline
-**"Rated by the storm."** — Short, proprietary, communicates the EF scale, works on jars/ads/merch/press.
+**"Chase the storm."** — Active, aspirational, maps to the EF escalation journey. Works as both tagline and CTA on jars/ads/merch/press.
 
 ### Secondary taglines (contextual use)
 - "Brace yourself." — social media

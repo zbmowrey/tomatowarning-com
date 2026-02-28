@@ -24,7 +24,7 @@ Engage trademark attorney to search all marks before public use. A single engage
 4. "Squall Line" (EF-3)
 5. "Supercell" (EF-4)
 6. "Ground Zero" (EF-5)
-7. "Rated by the storm." (tagline)
+7. "Chase the storm." (tagline)
 
 ## Risk Flags
 - "Ground Zero" — common term with prior use in multiple contexts

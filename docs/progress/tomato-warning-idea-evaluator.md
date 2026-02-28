@@ -151,10 +151,10 @@ Infrastructure requirement. Low effort. Without it, the retailer and nonprofit C
 
 ---
 
-### PURSUE NOW #7 — Tagline: "Rated by the storm."
+### PURSUE NOW #7 — Tagline: "Chase the storm."
 
 **Market fit: H**
-Directly communicates the EF rating system — the brand's primary differentiator — in four words. Addresses the heat inconsistency pain point implicitly (a rating implies standards). Works across all formats: jar, website, ad, merchandise, press pitch.
+Active, aspirational, maps to the EF escalation journey. Works as both tagline and CTA — inviting customers to explore up the heat scale. Works across all formats: jar, website, ad, merchandise, press pitch. *(Pivoted from "Rated by the storm." to active voice.)*
 
 **Feasibility: H**
 A tagline requires no development work. It requires a decision and brand commitment. The other tagline candidates are evaluated below for completeness.
@@ -163,7 +163,7 @@ A tagline requires no development work. It requires a decision and brand commitm
 A tagline is foundational to the branding site. Every page, every headline, every CTA is written in the context of the brand voice. The tagline defines the voice.
 
 **Competitive advantage: H**
-No competitor uses a weather-system rating in their brand identity. "Rated by the storm" is proprietary to Tomato Warning — it cannot be credibly used by any other brand. This is a protectable phrase tied to the EF system.
+No competitor uses a weather-system rating in their brand identity. "Chase the storm" is proprietary to Tomato Warning — it cannot be credibly used by any other brand. This is a protectable phrase tied to the EF system.
 
 **Priority score: 8/10**
 Tagline selection is a prerequisite for everything else. The site cannot be designed in final form without a confirmed tagline.
@@ -179,7 +179,7 @@ Tagline selection is a prerequisite for everything else. The site cannot be desi
 - "The weather forecast you actually want to see." — Too self-amused for a primary tagline. REJECT for primary.
 - "Premium salsa with purpose. Just look at the forecast." — Best for email subject lines and pitches. SPECIFIC USE.
 
-**Recommendation on tagline candidates:** "Rated by the storm." as primary. "Brace yourself." as secondary/social-facing. Specific candidates (From the storm that named us / Born in a storm built for your table) reserved for mission page. Others deployed contextually.
+**Recommendation on tagline candidates:** "Chase the storm." as primary. "Brace yourself." as secondary/social-facing. Specific candidates (From the storm that named us / Born in a storm built for your table) reserved for mission page. Others deployed contextually.
 
 ---
 
@@ -859,7 +859,7 @@ The nearest candidates for rejection:
 | 9 | EF-4: Supercell (concept for product page) | Product | S | H | 9/10 |
 | 10 | EF-5: Ground Zero (concept for product page) | Product | S | H | 9/10 |
 | 11 | Feature 7: Dual Mailing List — Context-Sensitive | Website | S | H | 8/10 |
-| 12 | Tagline: "Rated by the storm." + voice architecture | Brand Voice | S | H | 8/10 |
+| 12 | Tagline: "Chase the storm." + voice architecture | Brand Voice | S | H | 8/10 |
 | 13 | Key Messaging Pillars (5 pillars) | Brand Voice | S | H | 8/10 |
 | 14 | Visual Identity: Color Palette, Typography, Storm Imagery | Visual | M | H | 8/10 |
 | 15 | Feature 9: Press/Media Page "Storm Watch" | Website | S | M-H | 7/10 |
@@ -905,7 +905,7 @@ The following dependencies must be resolved before the branding site can launch:
 1. **Charity partner named and committed** — Required before the mission page (Feature 4) can be published. Do not launch with a vague partner placeholder.
 2. **Product jar mockup renders** — Shared dependency for Feature 1 (hero), Feature 3 (product page), and Feature 9 (press page). Prioritize render production early in the design workflow.
 3. **EF color palette finalized** — Required before any design work begins. Blocks Feature 1, Feature 3, all label design.
-4. **Tagline confirmed** — "Rated by the storm." recommended. Required before final copywriting.
+4. **Tagline confirmed** — "Chase the storm." confirmed. Required before final copywriting.
 5. **Logo/vortex mark finalized** — Required before site design and label design can begin.
 6. **Email platform configured** — Three-list architecture (consumer, retailer, nonprofit) must be set up before any signup forms go live.
 7. **Product names confirmed** — EF-1 Coastal Calm through EF-5 Ground Zero are strong. Commit before the product page is copywritten.

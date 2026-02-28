@@ -93,7 +93,7 @@ All set status: "draft" — excluded from PROD builds, visible in DEV.
 ### Files Created:
 - `src/components/hero/JarImage.astro` — Astro Image with responsive srcset, eager/fetchpriority="high" option, EF-color placeholder div when jarImage path is absent (handles pre-render state)
 - `src/components/hero/EFScaleBar.astro` — Horizontal gradient bar (#D4A017→#1C0A0A), 5 jar positions loaded from content collection at build time, EF-n text labels (WCAG), eager loading throughout
-- `src/components/hero/HeroSection.astro` — h1 "Rated by the Storm.", sub-copy (Scoville + batch consistency), EF definition sidebar, EFScaleBar, dual CTAs (products + mission), static zero JS
+- `src/components/hero/HeroSection.astro` — h1 "Chase the Storm.", sub-copy (Scoville + batch consistency), EF definition sidebar, EFScaleBar, dual CTAs (products + mission), static zero JS
 - `src/components/press/AssetDownload.astro` — Download card with file icon, label, description, fileType badge, fileSize; renders nothing when href is empty (parent handles "Request spec sheet" fallback per resolved decision #9)
 
 **Build result:** `npx astro build` SUCCESS — 4 pages built, no regressions

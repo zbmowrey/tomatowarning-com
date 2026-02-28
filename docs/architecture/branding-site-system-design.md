@@ -565,7 +565,7 @@ Sitemap: https://tomatowarning.com/sitemap-index.xml
 
 | Page | Title Pattern | Structured Data |
 |------|---------------|-----------------|
-| Homepage | "Tomato Warning — Rated by the Storm" | Organization |
+| Homepage | "Tomato Warning — Premium Salsa \| Chase the Storm" | Organization |
 | Product pages | "EF-{n} {Name} \| Tomato Warning" | Product |
 | Mission | "Our Mission \| Tomato Warning" | — |
 | Retailers | "Stock the Storm \| Tomato Warning" | — |

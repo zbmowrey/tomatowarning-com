@@ -227,7 +227,7 @@ All ideas in this document are grounded in the research findings at `docs/resear
 
 ### Tagline Candidates
 
-1. **"Rated by the storm."** — Short, proprietary, instantly communicates the EF scale. Implies authority on heat. Works on jars, ads, t-shirts.
+1. **"Chase the storm."** — Active, aspirational, maps to the EF escalation journey. Works as both tagline and CTA on jars, ads, t-shirts. *(Updated from "Rated by the storm." — pivoted to active voice.)*
 
 2. **"Brace yourself."** — Double meaning: brace for the heat, brace for a storm. Playful without being exhausting. Versatile across heat levels.
 

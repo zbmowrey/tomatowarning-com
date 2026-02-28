@@ -14,7 +14,8 @@ the same emotional core: **innocence becoming purpose.**
 
 *For social media captions, elevator encounters, and the back of a business card.*
 
-> A three-year-old heard "Tornado Warning" on TV and said "Tomato Warning." His family moved to Florida, lived through real
+> A three-year-old heard "Tornado Warning" on TV and said "Tomato Warning." His family moved to Florida, lived through
+> real
 > storms, and turned that mispronunciation into a premium salsa brand that funds disaster relief. Every jar is rated on
 > the tornado scale. Every purchase helps communities recover.
 
@@ -42,15 +43,18 @@ the same emotional core: **innocence becoming purpose.**
 *For the website About page, press features, and video script foundation.*
 
 > It was a summer evening in Southern Illinois. The kind where the sky turns that particular shade of green-gray and the
-> air goes still before it goes violent. A tornado warning scrolled across the bottom of the television screen. The sirens
+> air goes still before it goes violent. A tornado warning scrolled across the bottom of the television screen. The
+> sirens
 > hadn't started yet, but the alert was there, doing what alerts do -- demanding attention.
 
 > Max was three. He was watching the screen with the half-attention of a toddler, absorbing the shapes and sounds the
-> way kids do -- filtering the world through a brain still building its dictionary. He looked up at his dad and said, with
+> way kids do -- filtering the world through a brain still building its dictionary. He looked up at his dad and said,
+> with
 > total confidence: *"Daddy, there's a Tomato Warning."*
 
 > It was the kind of moment that makes you laugh even when you probably shouldn't -- a child's voice cutting through the
-> tension of a storm with something so perfectly, absurdly wrong that it felt right. The family laughed. The storm passed.
+> tension of a storm with something so perfectly, absurdly wrong that it felt right. The family laughed. The storm
+> passed.
 > The phrase became one of those family stories you tell at dinners and holidays, the kind that gets funnier every time
 > because it captures something real about how children see the world: fearlessly, and without any of the baggage adults
 > carry.
@@ -74,13 +78,14 @@ the same emotional core: **innocence becoming purpose.**
 > But the salsas are only half the story.
 
 > At least 10% of Tomato Warning's net profits go directly to disaster relief -- to the regional organizations putting
-> boots on the ground when storms take everything. Not vague "a portion of proceeds." Named partners. Real dollars. Public
+> boots on the ground when storms take everything. Not vague "a portion of proceeds." Named partners. Real dollars.
+> Public
 > accounting.
 
 > Because a three-year-old heard a warning on TV and turned it into something his family couldn't forget. And his family
 > decided that if a storm was going to name their brand, the least they could do was help people survive the real ones.
 
-> Tomato Warning. Rated by the storm.
+> Tomato Warning. Chase the storm.
 
 ### The Full Narrative
 
@@ -108,12 +113,14 @@ Tomato Warning."*
 
 > His dad laughed. His mom laughed. The storm passed without incident, as most storms do. The phrase entered the family
 > lexicon -- one of those private jokes that families carry like heirlooms. "Tomato Warning" became shorthand for the
-> absurd, the innocent, the moment when a child accidentally says something more interesting than what was actually there.
+> absurd, the innocent, the moment when a child accidentally says something more interesting than what was actually
+> there.
 
 > **The Move.**
 
 > The family moved to Florida shortly after. New state, new chapter. But the weather has a way of following you, or more
-> precisely, Florida has a way of teaching you that weather is never just weather. It is infrastructure. It is economics.
+> precisely, Florida has a way of teaching you that weather is never just weather. It is infrastructure. It is
+> economics.
 > It is the difference between a community that exists on Tuesday and one that is fundamentally altered by Wednesday.
 
 > Gulf Coast hurricanes became the new normal. Not the distant, televised kind -- the kind where you board windows, fill
@@ -123,8 +130,10 @@ Tomato Warning."*
 
 > The family watched storms reshape the geography of their community. They watched the aftermath in eastern Tennessee,
 > in western North Carolina -- places where the word "unprecedented" stopped being a news headline and started being a
-> lived experience. They saw what happens in the gap between the disaster and the recovery: volunteers filling trucks with
-> water, nonprofits coordinating shelter logistics, ordinary people doing extraordinary work because the systems designed
+> lived experience. They saw what happens in the gap between the disaster and the recovery: volunteers filling trucks
+> with
+> water, nonprofits coordinating shelter logistics, ordinary people doing extraordinary work because the systems
+> designed
 > to help were overwhelmed.
 
 > **The Name.**
@@ -141,13 +150,15 @@ Tomato Warning."*
 > Scoville numbers. Every jar designed to be a conversation about flavor first, heat second, and purpose always.
 
 > Because if storms were going to be the through-line of this family's life -- from a child's mispronunciation in
-> Illinois to hurricane shutters in Florida -- then storms would also be the through-line of this brand. And if the brand
+> Illinois to hurricane shutters in Florida -- then storms would also be the through-line of this brand. And if the
+> brand
 > borrowed the language of destruction, it would pay that debt by funding reconstruction.
 
 > **The Mission.**
 
 > At least 10% of Tomato Warning's net profits go to disaster relief. Not a marketing gesture. A structural commitment.
-> Named charity partners. Public annual reporting. Dollars that move from a jar on your table to a family rebuilding after
+> Named charity partners. Public annual reporting. Dollars that move from a jar on your table to a family rebuilding
+> after
 > the storm.
 
 > The fundraising channel extends this further: schools, scout troops, sports teams, and community organizations sell
@@ -157,7 +168,8 @@ Tomato Warning."*
 > **The Truth.**
 
 > Tomato Warning is what happens when a family takes the most ordinary, most human moment imaginable -- a child getting
-> a word wrong -- and refuses to let it stay ordinary. It is a brand built on the belief that the best things in life are
+> a word wrong -- and refuses to let it stay ordinary. It is a brand built on the belief that the best things in life
+> are
 > accidents that you choose to take seriously. That flavor and philanthropy are not opposing forces. That a jar of salsa
 > can carry a story worth telling and a mission worth funding.
 
@@ -420,7 +432,8 @@ scout troops, sports teams, and local organizations sell Tomato Warning at gener
 This story is simpler and lighter:
 
 > Tomato Warning salsa helps communities in two ways: our profits fund disaster relief, and our fundraising program
-> helps local organizations raise money for the programs that matter to them. Premium product. Great margins. A story that
+> helps local organizations raise money for the programs that matter to them. Premium product. Great margins. A story
+> that
 > practically sells itself.
 
 Coach Dave (our fundraiser persona) does not need the full origin myth. He needs to know: the product is good, the
@@ -662,4 +675,4 @@ For detailed operational protocols including timing, authority, and pivot messag
 press release to a jar label -- should be traceable back to the stories, archetypes, and principles defined here. If it
 contradicts this bible, it does not ship.*
 
-*Rated by the storm.*
+*Chase the storm.*

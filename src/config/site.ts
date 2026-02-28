@@ -6,7 +6,7 @@ export interface NavItem {
 
 export const siteConfig = {
   name: 'Tomato Warning',
-  tagline: 'Rated by the storm.',
+  tagline: 'Chase the storm.',
   url: 'https://tomatowarning.com',
   brandColors: {
     stormCharcoal: '#2C2C2C',

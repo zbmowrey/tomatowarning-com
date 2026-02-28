@@ -113,8 +113,8 @@ These 15 items are required for the branding website. Ranked by priority score.
 
 ---
 
-#### 12. Primary Tagline: "Rated by the storm."
-- **Description:** Four words. Communicates the EF rating system, implies authority on heat, works on jars/ads/merch/press. Secondary taglines for specific contexts: "Brace yourself." (social), "From the storm that named us." (mission page), "Born in a storm. Built for your table." (origin story).
+#### 12. Primary Tagline: "Chase the storm."
+- **Description:** Three words. Active, aspirational, maps to the EF escalation journey. Works as both tagline and CTA on jars/ads/merch/press. Secondary taglines for specific contexts: "Brace yourself." (social), "From the storm that named us." (mission page), "Born in a storm. Built for your table." (origin story).
 - **User need:** The brand needs a proprietary, ownable tagline that communicates its primary differentiator.
 - **Evidence:** EF-scale system is the brand's uncontested positioning; no competitor uses weather-system rating.
 - **Effort:** Small (decision, not development)
@@ -229,7 +229,7 @@ Five cross-cutting themes emerged from ideation:
 | 1 | **Charity partner named and committed** | Mission page, messaging pillar #4 | NOT STARTED |
 | 2 | **EF color palette finalized** | All design work | NOT STARTED |
 | 3 | **Logo / vortex mark designed** | Site design, label design | NOT STARTED |
-| 4 | **Tagline confirmed** ("Rated by the storm." recommended) | Final copywriting | NOT STARTED |
+| 4 | **Tagline confirmed** ("Chase the storm." confirmed) | Final copywriting | DONE |
 | 5 | **Product names confirmed** (EF-1 through EF-5) | Product page copy | NOT STARTED — needs trademark search |
 | 6 | **Product mockup renders produced** | Hero, product pages, press page | NOT STARTED |
 | 7 | **Email platform configured** (3-list architecture) | All signup forms | NOT STARTED |
@@ -249,7 +249,7 @@ Five cross-cutting themes emerged from ideation:
 
 1. **Which charity partner?** Candidates from research: Center for Disaster Philanthropy, Direct Relief, Team Rubicon. Decision needed before mission page.
 2. **What specific giving percentage?** Research recommends 5-10% of net profits. Need to model economics.
-3. **Trademark availability** for "Tomato Warning," product names (Coastal Calm, Gulf Breeze, Squall Line, Supercell, Ground Zero), and tagline ("Rated by the storm.").
+3. **Trademark availability** for "Tomato Warning," product names (Coastal Calm, Gulf Breeze, Squall Line, Supercell, Ground Zero), and tagline ("Chase the storm.").
 4. **Scoville range commitments** — published ranges create accountability. Must be validated during recipe development. Are these ranges achievable and consistent in production?
 5. **Social media handles** — @tomatowarning availability across Instagram, Facebook, TikTok, X.
 6. **Tech stack for website** — Static site generator, headless CMS, Shopify (for future e-commerce), or something else? Decision needed before build phase.

@@ -221,7 +221,7 @@ These stories cover 8 roadmap items required to launch the Tomato Warning Phase 
 
 - KPI: 50+ retailer signups.
 - The downloadable one-pager PDF is a separate asset dependency. Coordinate with product renders (P1-15) and visual identity (P1-07) teams.
-- Brand voice for this page: professional and confident, not playful. The "Rated by the storm." tagline can appear but should not be the dominant tone.
+- Brand voice for this page: professional and confident, not playful. The "Chase the storm." tagline can appear but should not be the dominant tone.
 - This page requires the email platform (P1-12) to be complete.
 
 ---

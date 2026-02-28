@@ -2,7 +2,7 @@
 
 ## 1. Brand Identity & Mission
 
-**Tagline:** "Rated by the storm."
+**Tagline:** "Chase the storm."
 **Secondary:** "Brace yourself." | "From the storm that named us." | "Born in a storm. Built for your table."
 **Mission:** Tomato Warning is a premium salsa brand rated on the EF-1 to EF-5 tornado heat scale. The brand combines
 extreme flavor with extreme charity, donating a percentage of net profits to named disaster relief organizations.

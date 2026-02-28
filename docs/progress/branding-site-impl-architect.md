@@ -160,7 +160,7 @@ interface PageMeta {
 // src/config/site.ts
 interface SiteConfig {
   name: string;                // "Tomato Warning"
-  tagline: string;             // "Rated by the Storm."
+  tagline: string;             // "Chase the storm."
   url: string;                 // "https://tomatowarning.com"
   defaultOgImage: string;      // "/images/og-default.jpg"
   brandColors: {
@@ -903,7 +903,7 @@ interface PressInquiryPayload {
   - Product grid section: all published products as ProductCards
   - Consumer signup CTA section with `<ConsumerSignupForm client:visible />`
   - Schema.org Organization structured data in JSON-LD
-  - Title: "Tomato Warning — Rated by the Storm"
+  - Title: "Tomato Warning — Premium Salsa | Chase the Storm"
 
 ---
 
