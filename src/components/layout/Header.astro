@@ -1,5 +1,6 @@
 ---
 import { siteConfig } from '@/config/site';
+import type { NavItem } from '@/config/site';
 import { Image } from 'astro:assets';
 import logoGraphic from '@/assets/images/logo.png';
 ---
@@ -16,11 +17,29 @@ import logoGraphic from '@/assets/images/logo.png';
 
     <nav aria-label="Primary navigation" class="desktop-nav">
       <ul>
-        {siteConfig.nav.map((item) => (
-          <li>
-            <a href={item.href}>{item.label}</a>
-          </li>
-        ))}
+        {(siteConfig.nav as readonly NavItem[]).map((item) =>
+          item.children ? (
+            <li class="has-dropdown">
+              <button type="button" aria-expanded="false" aria-haspopup="true">
+                {item.label}
+                <svg class="chevron" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true">
+                  <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <ul class="dropdown" role="menu">
+                {item.children.map((child) => (
+                  <li role="none">
+                    <a href={child.href} role="menuitem">{child.label}</a>
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ) : (
+            <li>
+              <a href={item.href}>{item.label}</a>
+            </li>
+          )
+        )}
       </ul>
     </nav>
 
@@ -107,6 +126,86 @@ import logoGraphic from '@/assets/images/logo.png';
   .desktop-nav a:hover {
     opacity: 1;
     color: var(--accent-gold);
+  }
+
+  /* Dropdown trigger button */
+  .has-dropdown {
+    position: relative;
+  }
+
+  .has-dropdown > button {
+    all: unset;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: var(--storm-charcoal);
+    font-weight: 600;
+    opacity: 0.85;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .has-dropdown > button:hover {
+    opacity: 1;
+    color: var(--accent-gold);
+  }
+
+  .chevron {
+    transition: transform 0.2s ease;
+  }
+
+  .has-dropdown:hover .chevron,
+  .has-dropdown > button[aria-expanded="true"] .chevron {
+    transform: rotate(180deg);
+  }
+
+  /* Dropdown panel */
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0.75rem;
+    background: var(--premium-white);
+    border: 1px solid rgba(44, 44, 44, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    padding: 0.75rem 0 0.5rem;
+    min-width: 180px;
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.15s ease, visibility 0.15s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .has-dropdown:hover .dropdown,
+  .has-dropdown:focus-within .dropdown {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Invisible bridge so the mouse can travel from button to dropdown */
+  .dropdown::before {
+    content: '';
+    position: absolute;
+    top: -0.75rem;
+    left: 0;
+    right: 0;
+    height: 0.75rem;
+  }
+
+  .dropdown a {
+    display: block;
+    padding: 0.5rem 1.25rem;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    opacity: 1;
+  }
+
+  .dropdown a:hover {
+    background: rgba(44, 44, 44, 0.04);
   }
 
   .hamburger {

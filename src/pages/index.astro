@@ -19,14 +19,14 @@ const organizationJsonLd = {
   name: 'Tomato Warning',
   url: 'https://tomatowarning.com',
   description:
-    'Small-batch Florida salsa rated by the EF storm scale. Five heat levels, batch-consistent Scoville ratings.',
+    'Premium small-batch Florida salsa rated on the Enhanced Fujita tornado scale. Five heat levels from 500 to 500,000+ SHU with published Scoville ranges. Flavor-first. Mission-driven. Rated by the storm.',
   sameAs: [],
 };
 ---
 
 <PageLayout
-  title="Tomato Warning — Flavor on the Radar."
-  description="Small-batch hot sauces built around Florida's EF rating system. From a gentle gust to total devastation. Five levels. All storm."
+  title="Tomato Warning — Premium Salsa Rated by the Storm"
+  description="Premium Florida salsa rated EF-1 to EF-5 on the Enhanced Fujita scale. Published Scoville ranges, complex flavor at every level, and 10% of net profits to disaster relief."
   canonicalPath="/"
   structuredData={organizationJsonLd}
 >
@@ -36,7 +36,7 @@ const organizationJsonLd = {
     <section class="products-section" aria-labelledby="products-heading">
       <div class="products-inner">
         <h2 id="products-heading" class="products-heading">The Lineup</h2>
-        <p class="products-sub">Five levels. All storm. No apologies.</p>
+        <p class="products-sub">EF-1 to EF-5. From a gentle coastal breeze to total devastation. Find your level.</p>
         <div class="products-grid">
           {sortedProducts.map((product) => (
             <ProductCard product={product.data} />

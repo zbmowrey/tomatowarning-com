@@ -47,7 +47,7 @@ export async function submitToEmailPlatform(
       };
     }
 
-    return { status: 'success', message: data.message ?? "You're on the list!" };
+    return { status: 'success', message: data.message ?? "You're on the list." };
   } catch {
     return { status: 'error', message: 'Something went wrong. Please try again.' };
   }

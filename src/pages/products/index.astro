@@ -13,15 +13,15 @@ const sortedProducts = publishedProducts.sort((a, b) => a.data.efLevel - b.data.
 ---
 
 <PageLayout
-  title="Hot Sauces | Tomato Warning"
-  description="All five EF levels of Tomato Warning hot sauce — from Coastal Calm (EF-1) to Ground Zero (EF-5). Flavor on the radar."
+  title="The Lineup — Premium Salsa EF-1 to EF-5 | Tomato Warning"
+  description="Five premium salsas rated on the Enhanced Fujita scale — from EF-1 Coastal Calm to EF-5 Ground Zero. Published Scoville ranges. Find your level."
   canonicalPath="/products/"
 >
   <section class="products-section">
     <div class="products-inner">
       <header class="products-header">
         <h1>The Lineup</h1>
-        <p class="products-subtitle">Five levels. All storm. No apologies.</p>
+        <p class="products-subtitle">EF-1 to EF-5. From a gentle coastal breeze to total devastation. Find your level.</p>
       </header>
 
       {sortedProducts.length > 0 ? (
@@ -31,7 +31,7 @@ const sortedProducts = publishedProducts.sort((a, b) => a.data.efLevel - b.data.
           ))}
         </div>
       ) : (
-        <p class="no-products">Products launching soon. Sign up below to be notified.</p>
+        <p class="no-products">The storm is building. Five salsas, EF-1 to EF-5 — launching soon. Join the Storm below to get first access.</p>
       )}
     </div>
   </section>

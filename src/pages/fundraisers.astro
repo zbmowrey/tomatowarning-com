@@ -6,8 +6,8 @@ import { FORM_ENDPOINT, nonprofitFormConfig, formConfigs } from '@/config/forms'
 ---
 
 <PageLayout
-  title="Fundraise for Recovery | Tomato Warning"
-  description="Run a hot sauce fundraiser with Tomato Warning. 45–50% margins, no upfront cost, custom labels available. Apply for our community partner program."
+  title="Fundraiser Program — 50% Margins | Tomato Warning"
+  description="Raise money with Tomato Warning premium salsa. Your organization keeps 50% of every sale. No upfront cost, shelf-stable product, and a built-in story that sells itself."
   canonicalPath="/fundraisers/"
 >
   <article class="fundraisers-page">
@@ -15,10 +15,9 @@ import { FORM_ENDPOINT, nonprofitFormConfig, formConfigs } from '@/config/forms'
 
       <header class="page-header">
         <p class="eyebrow">Community Partner Program</p>
-        <h1>Your next fundraiser. Storm-tested.</h1>
+        <h1>Premium salsa your families will actually buy.</h1>
         <p class="page-lead">
-          Tomato Warning is built for organizations that need a fundraiser people actually want to buy.
-          Hot sauce that tells a story — and margins that make the math work.
+          Your organization keeps 50% of every jar sold. No upfront cost. Shelf-stable, premium salsa with a built-in story about storms and community. The product sells itself — the margins do the rest.
         </p>
       </header>
 
@@ -27,24 +26,31 @@ import { FORM_ENDPOINT, nonprofitFormConfig, formConfigs } from '@/config/forms'
           <h2>Why it works</h2>
           <ul class="benefits-list">
             <li>
-              <div class="benefit-icon" aria-hidden="true">%</div>
+              <div class="benefit-icon" aria-hidden="true">50%</div>
               <div class="benefit-text">
-                <strong>45–50% margins.</strong>
-                <p>One of the highest margins in food fundraising. No complicated tiering.</p>
+                <strong>Your organization keeps 50%.</strong>
+                <p>One of the highest margins in food fundraising. No complicated tiering, no hidden fees.</p>
               </div>
             </li>
             <li>
               <div class="benefit-icon" aria-hidden="true">$0</div>
               <div class="benefit-text">
                 <strong>No upfront cost.</strong>
-                <p>Order fulfillment after your campaign ends. No inventory risk for your organization.</p>
+                <p>Order fulfillment after your campaign ends. No inventory risk, no leftover product.</p>
               </div>
             </li>
             <li>
-              <div class="benefit-icon" aria-hidden="true">🏷</div>
+              <div class="benefit-icon" aria-hidden="true">+</div>
               <div class="benefit-text">
-                <strong>Custom label available.</strong>
-                <p>Add your team name or logo to the jar. Minimum quantities apply.</p>
+                <strong>Shelf-stable and premium.</strong>
+                <p>No melting, no freezers, no logistics headaches. Glass jars, real ingredients, a product families are proud to buy.</p>
+              </div>
+            </li>
+            <li>
+              <div class="benefit-icon" aria-hidden="true">TW</div>
+              <div class="benefit-text">
+                <strong>Custom labels available.</strong>
+                <p>Put your team name or logo on the jar. Minimum quantities apply.</p>
               </div>
             </li>
           </ul>
@@ -52,16 +58,22 @@ import { FORM_ENDPOINT, nonprofitFormConfig, formConfigs } from '@/config/forms'
           <div class="who-qualifies">
             <h3>Who qualifies</h3>
             <p>
-              Youth sports teams, schools, nonprofits, churches, and community groups.
-              We review every application to ensure a good fit.
+              Youth sports teams, schools, scout troops, nonprofits, churches, and community organizations.
+            </p>
+          </div>
+
+          <div class="dual-mission">
+            <h3>The pitch writes itself</h3>
+            <p>
+              Families buy premium salsa they will actually use — and every jar also supports disaster relief. Your sellers raise money for the team while helping communities recover from storms. Two wins in one purchase.
             </p>
           </div>
         </div>
 
         <div class="fundraisers-form">
-          <h2>Apply Now</h2>
+          <h2>Start Your Fundraiser</h2>
           <p class="form-intro">
-            Tell us about your organization and campaign. We'll review your application and follow up within a few business days.
+            Tell us about your organization and your fundraising goal. We will follow up with a sample kit and everything you need to launch.
           </p>
           <NonprofitSignupForm
             client:visible
@@ -204,6 +216,25 @@ import { FORM_ENDPOINT, nonprofitFormConfig, formConfigs } from '@/config/forms'
   }
 
   .who-qualifies p {
+    font-size: 0.9rem;
+    color: var(--storm-charcoal);
+    opacity: 0.7;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .dual-mission {
+    margin-top: 2rem;
+  }
+
+  .dual-mission h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--storm-charcoal);
+    margin: 0 0 0.5rem;
+  }
+
+  .dual-mission p {
     font-size: 0.9rem;
     color: var(--storm-charcoal);
     opacity: 0.7;

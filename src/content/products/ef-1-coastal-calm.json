@@ -2,8 +2,8 @@
   "name": "Coastal Calm",
   "efLevel": 1,
   "slug": "ef-1-coastal-calm",
-  "flavorHeadline": "Bright, fresh — FL tomatoes, poblano, cilantro, lime",
-  "heatDescriptor": "A gentle gust — big flavor, little fire",
+  "flavorHeadline": "Sun-ripened Florida tomatoes, crisp poblano, bright cilantro, fresh lime",
+  "heatDescriptor": "A gentle gust — all flavor, little fire",
   "scovilleMin": 500,
   "scovilleMax": 1500,
   "keyIngredients": [
@@ -12,8 +12,8 @@
   ],
   "efColor": "#D4A017",
   "jarImage": "/images/products/ef-1-coastal-calm.png",
-  "jarImageAlt": "Jar of Tomato Warning Coastal Calm EF-1 hot sauce with a golden-yellow label",
-  "productStory": "Coastal Calm is the pristine morning before the atmosphere turns violent. We built this mild, vibrant blend for palates that demand complex flavor without the overwhelming fire. Sun-ripened Florida tomatoes, crisp poblano, and bright lime coalesce into a flawless, breezy finish. The calm before the storm.",
+  "jarImageAlt": "Jar of Tomato Warning Coastal Calm EF-1 salsa with a golden-yellow label",
+  "productStory": "Golden hour. The window is open, the air still carries salt, and the sky hasn't decided what it's doing yet. Coastal Calm lives in that moment — sun-ripened Florida tomatoes, crisp poblano, cilantro you can smell before you taste it, and a squeeze of fresh lime that pulls everything bright. Every ingredient is visible in the jar and honest on the tongue. 500 to 1,500 SHU — a whisper of warmth, nothing more. This is not the absence of power. It is power at rest.",
   "pairings": [
     "Fish tacos with lime slaw",
     "Scrambled eggs and avocado toast",

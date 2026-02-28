@@ -1,0 +1,102 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import { FooterSignupForm } from '@/components/forms/FooterSignupForm';
+import { FORM_ENDPOINT, formConfigs } from '@/config/forms';
+---
+
+<PageLayout
+  title="Distribution Partners | Tomato Warning"
+  description="Partner with Tomato Warning for regional and national distribution. Premium salsa, five SKUs, and a mission-driven brand."
+  canonicalPath="/distributors/"
+>
+  <article class="distributors-page">
+    <div class="distributors-inner">
+
+      <header class="page-header">
+        <p class="eyebrow">Distribution</p>
+        <h1>Distribute the Storm.</h1>
+        <p class="page-lead">
+          We're building distribution partnerships to bring Tomato Warning to shelves nationwide. If you're a distributor interested in a premium, mission-driven salsa brand with five SKUs and a built-in heat rating system, we'd love to talk.
+        </p>
+      </header>
+
+      <div class="cta-section">
+        <p>
+          For distribution inquiries, reach out directly at
+          <a href="mailto:hello@tomatowarning.com">hello@tomatowarning.com</a>.
+        </p>
+      </div>
+
+    </div>
+  </article>
+
+  <FooterSignupForm
+    slot="footer-form"
+    client:visible
+    formEndpoint={FORM_ENDPOINT}
+    consumerListId={formConfigs.consumer.listId}
+    retailerListId={formConfigs.retailer.listId}
+    nonprofitListId={formConfigs.nonprofit.listId}
+    successMessage={formConfigs.consumer.successMessage}
+    alreadySubscribedMessage={formConfigs.consumer.alreadySubscribedMessage}
+    noscriptFallbackUrl={formConfigs.consumer.noscriptFallbackUrl}
+    privacyPolicyUrl="/privacy/"
+  />
+</PageLayout>
+
+<style>
+  .distributors-page {
+    padding: 4rem 1.5rem;
+  }
+
+  .distributors-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--radar-teal);
+    margin: 0 0 0.75rem;
+  }
+
+  .page-header h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: var(--storm-charcoal);
+    margin: 0 0 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .page-lead {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--storm-charcoal);
+    opacity: 0.8;
+    margin: 0;
+    max-width: 60ch;
+  }
+
+  .cta-section {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--storm-charcoal);
+  }
+
+  .cta-section a {
+    color: var(--radar-teal);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .cta-section a:hover {
+    color: var(--accent-gold);
+  }
+</style>

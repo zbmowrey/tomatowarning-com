@@ -1,0 +1,12 @@
+name = "tomatowarning-api"
+main = "src/index.ts"
+compatibility_date = "2024-12-18"
+
+[vars]
+ALLOWED_ORIGIN = "https://tomatowarning.com"
+PRESS_EMAIL_TO = "press@tomatowarning.com"
+NOTIFY_EMAIL_TO = "hello@tomatowarning.com"
+SENDER_EMAIL = "noreply@tomatowarning.com"
+SENDER_NAME = "Tomato Warning"
+RETAILER_LIST_ID = "8"
+NONPROFIT_LIST_ID = "9"

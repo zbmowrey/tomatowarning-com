@@ -64,7 +64,13 @@ export function ConsumerSignupForm({
     if (showZipCode && zipCode) fields.zipCode = zipCode;
 
     const result = await submitToEmailPlatform(formEndpoint, { email, listId, fields });
-    setServerMessage(result.status === 'success' ? successMessage : alreadySubscribedMessage);
+    if (result.status === 'success') {
+      setServerMessage(successMessage);
+    } else if (result.status === 'already_subscribed') {
+      setServerMessage(alreadySubscribedMessage);
+    } else {
+      setServerMessage(result.message);
+    }
     setStatus(result.status as Status);
 
     if (result.status === 'success') {
@@ -81,7 +87,7 @@ export function ConsumerSignupForm({
   if (status === 'error') {
     return (
       <FormError
-        message="Something went wrong. Please try again."
+        message={serverMessage || 'Something went wrong. Please try again.'}
         onRetry={() => setStatus('idle')}
       />
     );

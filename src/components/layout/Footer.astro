@@ -1,6 +1,12 @@
 ---
 import { siteConfig } from '@/config/site';
+import type { NavItem } from '@/config/site';
 import PrivacyLink from '@/components/common/PrivacyLink.astro';
+
+// Flatten nav items: top-level links + all children from dropdowns
+const footerLinks = (siteConfig.nav as readonly NavItem[]).flatMap((item) =>
+  item.children ? item.children : item.href ? [{ label: item.label, href: item.href }] : []
+);
 ---
 
 <footer class="site-footer">
@@ -19,7 +25,7 @@ import PrivacyLink from '@/components/common/PrivacyLink.astro';
     <div class="footer-bottom">
       <nav aria-label="Footer navigation" class="footer-nav">
         <ul>
-          {siteConfig.nav.map((item) => (
+          {footerLinks.map((item) => (
             <li>
               <a href={item.href}>{item.label}</a>
             </li>

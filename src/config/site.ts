@@ -1,6 +1,12 @@
+export interface NavItem {
+  label: string;
+  href?: string;
+  children?: { label: string; href: string }[];
+}
+
 export const siteConfig = {
   name: 'Tomato Warning',
-  tagline: 'Flavor on the Radar.',
+  tagline: 'Rated by the storm.',
   url: 'https://tomatowarning.com',
   brandColors: {
     stormCharcoal: '#2C2C2C',
@@ -10,8 +16,16 @@ export const siteConfig = {
   nav: [
     { label: 'Products', href: '/products/' },
     { label: 'Mission', href: '/mission/' },
-    { label: 'Privacy', href: '/privacy/' },
-  ],
+    {
+      label: 'Partners',
+      children: [
+        { label: 'Retailers', href: '/retailers/' },
+        { label: 'Fundraisers', href: '/fundraisers/' },
+        { label: 'Distributors', href: '/distributors/' },
+        { label: 'Press', href: '/press/' },
+      ],
+    },
+  ] satisfies NavItem[],
 } as const;
 
 export const efColors: Record<number, string> = {

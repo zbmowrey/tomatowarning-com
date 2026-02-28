@@ -19,11 +19,11 @@ const scovilleFormatted = `${product.scovilleMin.toLocaleString()}–${product.s
 
 function getHeatLabel(level: number): string {
   switch (level) {
-    case 1: return 'Mild';
-    case 2: return 'Medium';
-    case 3: return 'Hot';
-    case 4: return 'Very Hot';
-    case 5: return 'Scorching';
+    case 1: return 'A Gentle Gust';
+    case 2: return 'The Storm Builds';
+    case 3: return 'The Storm Is Here';
+    case 4: return 'Rotation Confirmed';
+    case 5: return 'Total Devastation';
     default: return '';
   }
 }
@@ -37,7 +37,7 @@ const heatLabel = getHeatLabel(product.efLevel);
       {product.jarImage ? (
         <img
           src={product.jarImage}
-          alt={product.jarImageAlt ?? `${product.name} hot sauce jar`}
+          alt={product.jarImageAlt ?? `${product.name} salsa jar`}
           class="jar-image"
         />
       ) : (

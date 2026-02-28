@@ -18,9 +18,9 @@ export const FORM_ENDPOINT = import.meta.env.PUBLIC_EMAIL_FORM_ENDPOINT ?? '';
 export const consumerFormConfig: FormConfig = {
   listId: import.meta.env.PUBLIC_CONSUMER_LIST_ID ?? '',
   formId: 'consumer-signup',
-  heading: 'Get Early Access',
-  description: 'Be first to know when Tomato Warning launches.',
-  successMessage: "You're on the list! We'll be in touch.",
+  heading: 'Join the Storm',
+  description: 'Be first to know when Tomato Warning launches. Early access, recipes, and the full story.',
+  successMessage: "You're on the list. The storm is building — we'll be in touch.",
   alreadySubscribedMessage: "You're already signed up — we'll keep you posted.",
   noscriptFallbackUrl: 'mailto:hello@tomatowarning.com?subject=Consumer%20Sign-Up',
   analyticsEvent: ANALYTICS_EVENTS.CONSUMER_SIGNUP,
@@ -40,11 +40,11 @@ export const retailerFormConfig: FormConfig = {
 export const nonprofitFormConfig: FormConfig = {
   listId: import.meta.env.PUBLIC_NONPROFIT_LIST_ID ?? '',
   formId: 'nonprofit-signup',
-  heading: 'Community Partner Program',
-  description: 'Apply to receive donated product for your organization.',
-  successMessage: "Application received! We'll review and follow up.",
-  alreadySubscribedMessage: "We already have your application on file.",
-  noscriptFallbackUrl: 'mailto:hello@tomatowarning.com?subject=Nonprofit%20Partner%20Application',
+  heading: 'Start Your Fundraiser',
+  description: 'Your organization keeps 50% of every jar sold. Tell us about your group and we will send a free sample kit.',
+  successMessage: "Application received. We'll review and follow up within a few business days.",
+  alreadySubscribedMessage: "We already have your application on file — expect to hear from us soon.",
+  noscriptFallbackUrl: 'mailto:hello@tomatowarning.com?subject=Fundraiser%20Partner%20Application',
   analyticsEvent: ANALYTICS_EVENTS.NONPROFIT_SIGNUP,
 };
 

@@ -14,8 +14,8 @@ const pressWorkerEndpoint = import.meta.env.PUBLIC_PRESS_INQUIRY_ENDPOINT ?? '';
 ---
 
 <PageLayout
-  title="Storm Watch — Press | Tomato Warning"
-  description="Press resources for Tomato Warning. Brand overview, high-resolution assets, founder story, and press contact."
+  title="Press — Tomato Warning"
+  description="Press resources for Tomato Warning — a premium Florida salsa brand rated EF-1 to EF-5 on the Enhanced Fujita scale. Brand overview, founder story, product data, and media contact."
   canonicalPath="/press/"
 >
   <article class="press-page">
@@ -26,7 +26,7 @@ const pressWorkerEndpoint = import.meta.env.PUBLIC_PRESS_INQUIRY_ENDPOINT ?? '';
         <h1>Storm Watch.</h1>
         <p class="page-lead">
           Resources for media, food writers, and podcast hosts covering specialty food,
-          hot sauce culture, and mission-driven brands.
+          heat culture, and mission-driven brands.
         </p>
       </header>
 
@@ -36,33 +36,37 @@ const pressWorkerEndpoint = import.meta.env.PUBLIC_PRESS_INQUIRY_ENDPOINT ?? '';
           <section class="press-section" aria-labelledby="brand-overview-heading">
             <h2 id="brand-overview-heading">Brand Overview</h2>
             <p>
-              Tomato Warning is a Florida-born small-batch salsa brand built around the Enhanced Fujita
-              tornado scale — the same system meteorologists use to classify tornadoes. Each of the five
-              varieties corresponds to an EF level, from EF-1 Coastal Calm (500–1,500 SHU) to EF-5
-              Ground Zero (100,000–500,000 SHU). Every batch is Scoville-verified. Every jar lands
-              exactly where it should on the scale.
+              Tomato Warning is a premium small-batch salsa brand rated on the Enhanced Fujita
+              tornado scale — the same system meteorologists use to classify tornadoes. Five
+              products, EF-1 through EF-5, from Coastal Calm (500–1,500 SHU) to
+              Ground Zero (100,000–500,000+ SHU). Published Scoville ranges on every jar.
+              Flavor-first at every level.
             </p>
             <p>
-              The brand is rooted in the conviction that heat deserves an honest rating system — and
-              that a product with a clear identity, a charitable giving structure, and a story worth
-              telling can earn its place on shelves and in pantries across Florida and beyond.
+              The brand solves a real consumer problem: inconsistent heat labeling across the
+              salsa category. No FDA or USDA standard exists for "mild," "medium," or "hot."
+              The EF scale replaces guesswork with published data — and at least 10% of net
+              profits fund regional disaster relief organizations.
             </p>
           </section>
 
           <section class="press-section" aria-labelledby="founder-heading">
-            <h2 id="founder-heading">Founder</h2>
+            <h2 id="founder-heading">Origin Story</h2>
             <p>
-              Tomato Warning was founded by a Florida native who grew up watching hurricane forecasts
-              the way other kids watched sports scores. The idea started simple: a heat scale that
-              actually means something, made from Florida tomatoes, by someone who knows what a real
-              storm feels like. The EF system — precise, universally understood, and deeply Floridian —
-              was the obvious choice.
+              During a summer storm in Southern Illinois, a three-year-old boy named Max looked
+              up at his dad and said, "Daddy, there's a Tomato Warning." He meant tornado. The
+              name stuck — first as a family joke, then as something more.
             </p>
             <p>
-              The brand is currently in pre-launch, validating demand across three audiences: consumers
-              who want the product, retailers who would stock it, and nonprofits and community
-              organizations who would use it for fundraising. A portion of every sale will support
-              community recovery programs — the charitable partner is being finalized.
+              When the family moved to Florida, storms followed. Gulf Coast hurricanes.
+              Devastation across the Southeast. Watching communities lose everything and rebuild
+              from nothing changed the meaning of that innocent mispronunciation.
+            </p>
+            <p>
+              Tomato Warning became a premium salsa brand rated on the Enhanced Fujita tornado
+              scale — EF-1 through EF-5, from a gentle coastal breeze to total devastation.
+              Five salsas. Five storms. And at least 10% of net profits go directly to disaster
+              relief organizations helping communities recover from the real thing.
             </p>
           </section>
 
@@ -75,23 +79,23 @@ const pressWorkerEndpoint = import.meta.env.PUBLIC_PRESS_INQUIRY_ENDPOINT ?? '';
               </div>
               <div class="fact-item">
                 <dt>Based in</dt>
-                <dd>Florida</dd>
+                <dd>Gulf Coast, Florida</dd>
               </div>
               <div class="fact-item">
                 <dt>Product</dt>
-                <dd>Small-batch salsa, five EF-rated heat levels</dd>
+                <dd>Premium small-batch salsa, five EF-rated heat levels</dd>
               </div>
               <div class="fact-item">
                 <dt>Scoville range</dt>
-                <dd>500 (EF-1) to 500,000 (EF-5)</dd>
+                <dd>500 SHU (EF-1) to 500,000+ SHU (EF-5)</dd>
               </div>
               <div class="fact-item">
                 <dt>Status</dt>
-                <dd>Pre-launch, capturing retailer and consumer demand</dd>
+                <dd>Pre-launch — DTC and Gulf Coast farmers markets</dd>
               </div>
               <div class="fact-item">
                 <dt>Mission</dt>
-                <dd>Charitable giving to community organizations (partner TBD)</dd>
+                <dd>At least 10% of net profits to regional disaster relief organizations, reported annually</dd>
               </div>
             </dl>
           </section>
@@ -128,14 +132,14 @@ const pressWorkerEndpoint = import.meta.env.PUBLIC_PRESS_INQUIRY_ENDPOINT ?? '';
         <div class="press-contact">
           <h2>Press Inquiry</h2>
           <p class="form-intro">
-            Covering specialty food, hot sauce culture, or mission-driven brands?
-            We respond to press inquiries within 2 business days.
+            Covering specialty food, heat culture, or mission-driven brands?
+            We respond to press inquiries within two business days.
           </p>
           <PressInquiryForm
             client:visible
             submitEndpoint={pressWorkerEndpoint || undefined}
             fallbackMailto="mailto:press@tomatowarning.com"
-            successMessage="Thanks for reaching out. We'll respond within 2 business days."
+            successMessage="Received. We'll be in touch within two business days with everything you need."
             privacyPolicyUrl="/privacy/"
           />
         </div>

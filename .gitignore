@@ -22,3 +22,7 @@ Thumbs.db
 *.swp
 *.swo
 node_modules
+
+# Worker
+worker/node_modules/
+worker/.wrangler/

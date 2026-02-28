@@ -34,12 +34,12 @@ const gradientStops = [
     aria-hidden="true"
   ></div>
 
-  <ol class="scale-jars" aria-label="EF levels from mildest to hottest">
+  <ol class="scale-jars" aria-label="EF levels from EF-1 to EF-5">
     {products.map((product) => (
       <li class="scale-jar-item">
         <JarImage
           src={product.data.jarImage}
-          alt={product.data.jarImageAlt ?? `${product.data.name} hot sauce jar`}
+          alt={product.data.jarImageAlt ?? `${product.data.name} salsa jar`}
           efLevel={product.data.efLevel}
           efColor={product.data.efColor}
           width={120}
