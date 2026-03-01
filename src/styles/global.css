@@ -19,20 +19,7 @@
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 
   /* Custom Animations */
-  --animate-storm-pulse: storm-pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   --animate-fade-in-up: fade-in-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-
-  @keyframes storm-pulse {
-
-    0%,
-    100% {
-      opacity: 1;
-    }
-
-    50% {
-      opacity: 0.6;
-    }
-  }
 
   @keyframes fade-in-up {
     from {
@@ -60,6 +47,17 @@
   --ef-color-3: #8B2500;
   --ef-color-4: #5C0A0A;
   --ef-color-5: #1C0A0A;
+
+  /* Muted text (WCAG AA compliant alternatives to opacity) */
+  --text-muted-light: #716B62;
+  --text-muted-dark: #A9A29A;
+
+  /* Motion design tokens */
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-fade: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --duration-fast: 0.15s;
+  --duration-normal: 0.25s;
+  --duration-slow: 0.4s;
 }
 
 /* Base resets */
@@ -125,4 +123,16 @@ h6 {
   background-image: radial-gradient(var(--radar-teal) 1px, transparent 1px);
   background-size: 24px 24px;
   background-position: -12px -12px;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

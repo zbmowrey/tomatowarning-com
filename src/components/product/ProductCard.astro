@@ -11,9 +11,11 @@ interface Props {
     jarImage?: string;
     jarImageAlt?: string;
   };
+  headingLevel?: 2 | 3;
 }
 
-const { product } = Astro.props;
+const { product, headingLevel = 2 } = Astro.props;
+const HeadingTag = `h${headingLevel}` as any;
 
 const productHref = `/products/${product.slug}/`;
 ---
@@ -23,7 +25,6 @@ const productHref = `/products/${product.slug}/`;
     <div
       class="card-image-placeholder"
       style={`background-color: ${product.efColor};`}
-      aria-hidden="true"
     >
       {product.jarImage ? (
         <img
@@ -33,13 +34,13 @@ const productHref = `/products/${product.slug}/`;
           loading="lazy"
         />
       ) : (
-        <span class="placeholder-label">EF-{product.efLevel}</span>
+        <span class="placeholder-label" aria-hidden="true">EF-{product.efLevel}</span>
       )}
     </div>
 
     <div class="card-body">
       <HeatIndicator efLevel={product.efLevel} efColor={product.efColor} />
-      <h3 class="card-name">{product.name}</h3>
+      <HeadingTag class="card-name">{product.name}</HeadingTag>
       <p class="card-flavor">{product.flavorHeadline}</p>
     </div>
   </a>

@@ -39,7 +39,7 @@ const organizationJsonLd = {
         <p class="products-sub">EF-1 to EF-5. From a gentle coastal breeze to total devastation. Find your level.</p>
         <div class="products-grid">
           {sortedProducts.map((product) => (
-            <ProductCard product={product.data} />
+            <ProductCard product={product.data} headingLevel={3} />
           ))}
         </div>
       </div>
@@ -83,8 +83,7 @@ const organizationJsonLd = {
   .products-sub {
     text-align: center;
     font-size: 1.125rem;
-    color: var(--storm-charcoal);
-    opacity: 0.65;
+    color: var(--text-muted-light);
     margin: 0 0 3rem;
   }
 

@@ -82,6 +82,7 @@ const footerLinks = (siteConfig.nav as readonly NavItem[]).flatMap((item) =>
 
   .footer-nav ul {
     display: flex;
+    flex-wrap: wrap;
     gap: 1.5rem;
     list-style: none;
     margin: 0;
@@ -109,6 +110,6 @@ const footerLinks = (siteConfig.nav as readonly NavItem[]).flatMap((item) =>
 
   .copyright {
     font-size: 0.875rem;
-    opacity: 0.6;
+    color: var(--text-muted-dark);
   }
 </style>

@@ -37,19 +37,21 @@ const gradientStops = [
   <ol class="scale-jars" aria-label="EF levels from EF-1 to EF-5">
     {products.map((product) => (
       <li class="scale-jar-item">
-        <JarImage
-          src={product.data.jarImage}
-          alt={product.data.jarImageAlt ?? `${product.data.name} salsa jar`}
-          efLevel={product.data.efLevel}
-          efColor={product.data.efColor}
-          width={120}
-          height={160}
-          eager={true}
-        />
-        <span class="scale-label">
-          <span class="scale-ef-badge">EF-{product.data.efLevel}</span>
-          <span class="scale-product-name">{product.data.name}</span>
-        </span>
+        <a href={`/products/${product.data.slug}/`} aria-label={`EF-${product.data.efLevel} ${product.data.name} — View product`}>
+          <JarImage
+            src={product.data.jarImage}
+            alt={product.data.jarImageAlt ?? `${product.data.name} salsa jar`}
+            efLevel={product.data.efLevel}
+            efColor={product.data.efColor}
+            width={120}
+            height={160}
+            eager={true}
+          />
+          <span class="scale-label">
+            <span class="scale-ef-badge">EF-{product.data.efLevel}</span>
+            <span class="scale-product-name">{product.data.name}</span>
+          </span>
+        </a>
       </li>
     ))}
   </ol>
@@ -103,7 +105,16 @@ const gradientStops = [
     flex: 1;
     min-width: 0;
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    cursor: default;
+    cursor: pointer;
+  }
+
+  .scale-jar-item a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: inherit;
   }
   
   .scale-jar-item:hover {
@@ -135,8 +146,7 @@ const gradientStops = [
   .scale-product-name {
     font-size: 0.65rem;
     font-weight: 500;
-    color: var(--premium-white);
-    opacity: 0.65;
+    color: var(--text-muted-dark);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

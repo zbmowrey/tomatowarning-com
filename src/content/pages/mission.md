@@ -6,8 +6,6 @@ status: published
 lastUpdated: 2026-02-27
 ---
 
-# Our Mission
-
 *At least 10% of Tomato Warning's net profits go to disaster relief organizations helping communities prepare for, survive, and recover from extreme weather. Named partners. Specific dollars. Reported quarterly.*
 
 ## How It Started

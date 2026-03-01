@@ -33,7 +33,7 @@ const heatLabel = getHeatLabel(product.efLevel);
 
 <section class="product-hero">
   <div class="hero-inner">
-    <div class="jar-placeholder" style={`background-color: ${product.efColor};`} aria-hidden="true">
+    <div class="jar-placeholder" style={`background-color: ${product.efColor};`}>
       {product.jarImage ? (
         <img
           src={product.jarImage}
@@ -41,7 +41,7 @@ const heatLabel = getHeatLabel(product.efLevel);
           class="jar-image"
         />
       ) : (
-        <span class="jar-placeholder-text">EF-{product.efLevel}</span>
+        <span class="jar-placeholder-text" aria-hidden="true">EF-{product.efLevel}</span>
       )}
     </div>
 
@@ -50,9 +50,9 @@ const heatLabel = getHeatLabel(product.efLevel);
       <h1 class="product-name">{product.name}</h1>
       <div class="scoville-container" aria-label={`Heat level: ${heatLabel}, ${scovilleFormatted}`}>
         <span class="heat-label">{heatLabel}</span>
-        <span class="shu-wrapper">
+        <span class="shu-wrapper" tabindex="0" aria-describedby="shu-tooltip">
           <span class="shu-value">({scovilleFormatted})</span>
-          <div class="shu-tooltip" role="tooltip">
+          <div class="shu-tooltip" role="tooltip" id="shu-tooltip">
             <strong>Scoville Heat Units (SHU)</strong> measure the concentration of capsaicin, the chemical responsible for chili pepper heat. Our EF scale maps these scientific measurements to real-world storm intensity.
           </div>
         </span>
@@ -174,7 +174,8 @@ const heatLabel = getHeatLabel(product.efLevel);
     border-color: var(--premium-white) transparent transparent transparent;
   }
 
-  .shu-wrapper:hover .shu-tooltip {
+  .shu-wrapper:hover .shu-tooltip,
+  .shu-wrapper:focus-within .shu-tooltip {
     opacity: 1;
     visibility: visible;
     transform: translateX(-50%) translateY(0);

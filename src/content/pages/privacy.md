@@ -6,8 +6,6 @@ status: published
 lastUpdated: 2026-02-26
 ---
 
-# Privacy Policy
-
 **Effective Date:** February 26, 2026
 
 Tomato Warning ("we," "our," or "us") is committed to protecting your privacy. This policy explains what information we collect, how we use it, and your rights regarding your data.

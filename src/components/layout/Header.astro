@@ -26,10 +26,10 @@ import logoGraphic from '@/assets/images/logo.png';
                   <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </button>
-              <ul class="dropdown" role="menu">
+              <ul class="dropdown">
                 {item.children.map((child) => (
-                  <li role="none">
-                    <a href={child.href} role="menuitem">{child.label}</a>
+                  <li>
+                    <a href={child.href}>{child.label}</a>
                   </li>
                 ))}
               </ul>
@@ -102,7 +102,7 @@ import logoGraphic from '@/assets/images/logo.png';
 
   .logo-tagline {
     font-size: 0.7rem;
-    opacity: 0.7;
+    color: var(--text-muted-light);
     letter-spacing: 0.05em;
     text-transform: uppercase;
   }
@@ -234,3 +234,18 @@ import logoGraphic from '@/assets/images/logo.png';
     }
   }
 </style>
+
+<script>
+  document.querySelectorAll('.has-dropdown').forEach((container) => {
+    const button = container.querySelector('button[aria-expanded]');
+    if (!button) return;
+    container.addEventListener('mouseenter', () => button.setAttribute('aria-expanded', 'true'));
+    container.addEventListener('mouseleave', () => button.setAttribute('aria-expanded', 'false'));
+    container.addEventListener('focusin', () => button.setAttribute('aria-expanded', 'true'));
+    container.addEventListener('focusout', (e) => {
+      if (!container.contains(e.relatedTarget)) {
+        button.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+</script>
