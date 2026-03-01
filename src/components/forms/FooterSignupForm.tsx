@@ -11,7 +11,6 @@ export interface FooterSignupFormProps {
   formEndpoint: string;
   consumerListId: string;
   retailerListId: string;
-  nonprofitListId: string;
   successMessage: string;
   alreadySubscribedMessage: string;
   noscriptFallbackUrl: string;
@@ -85,7 +84,7 @@ export function FooterSignupForm({
           {status === 'submitting' ? 'Signing up…' : 'Sign Up'}
         </button>
         <p class="text-xs" style={{ color: '#A9A29A' }}>
-          Are you a retailer or organization? <a href="/retailers/" class="underline" style={{ color: '#A9A29A' }}>Contact us</a>
+          Are you a retailer? <a href="/retailers/" class="underline" style={{ color: '#A9A29A' }}>Contact us</a>
         </p>
         <p class="text-sm" style={{ color: '#A9A29A' }}>
           <a href={privacyPolicyUrl} class="underline" style={{ color: '#A9A29A' }}>Privacy Policy</a>

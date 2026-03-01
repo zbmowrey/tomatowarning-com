@@ -1,6 +1,6 @@
 import { ANALYTICS_EVENTS, type AnalyticsEventName } from './analytics';
 
-export type FormListType = 'consumer' | 'retailer' | 'nonprofit';
+export type FormListType = 'consumer' | 'retailer';
 
 export interface FormConfig {
   listId: string;
@@ -37,22 +37,10 @@ export const retailerFormConfig: FormConfig = {
   analyticsEvent: ANALYTICS_EVENTS.RETAILER_SIGNUP,
 };
 
-export const nonprofitFormConfig: FormConfig = {
-  listId: import.meta.env.PUBLIC_NONPROFIT_LIST_ID ?? '',
-  formId: 'nonprofit-signup',
-  heading: 'Start Your Fundraiser',
-  description: 'Your organization keeps 50% of every jar sold. Tell us about your group and we will send a free sample kit.',
-  successMessage: "Application received. We'll review and follow up within a few business days.",
-  alreadySubscribedMessage: "We already have your application on file — expect to hear from us soon.",
-  noscriptFallbackUrl: 'mailto:hello@tomatowarning.com?subject=Fundraiser%20Partner%20Application',
-  analyticsEvent: ANALYTICS_EVENTS.NONPROFIT_SIGNUP,
-};
-
 // Convenience map for dynamic lookups
 export const formConfigs: Record<FormListType, FormConfig> = {
   consumer: consumerFormConfig,
   retailer: retailerFormConfig,
-  nonprofit: nonprofitFormConfig,
 };
 
 export const roleOptions = [
@@ -62,14 +50,4 @@ export const roleOptions = [
   { value: 'other', label: 'Other' },
 ] as const;
 
-export const orgTypeOptions = [
-  { value: 'youth-sports', label: 'Youth Sports' },
-  { value: 'nonprofit-501c3', label: 'Nonprofit 501(c)(3)' },
-  { value: 'school', label: 'School' },
-  { value: 'church-religious', label: 'Church/Religious' },
-  { value: 'community-group', label: 'Community Group' },
-  { value: 'other', label: 'Other' },
-] as const;
-
 export type RoleOption = (typeof roleOptions)[number]['value'];
-export type OrgTypeOption = (typeof orgTypeOptions)[number]['value'];

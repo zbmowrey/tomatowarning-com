@@ -45,10 +45,6 @@ describe('fireConversionEvent', () => {
     expect(window.plausible).toHaveBeenCalledWith('form_submit_retailer', expect.any(Object));
   });
 
-  it('works for nonprofit_signup event', () => {
-    fireConversionEvent('form_submit_nonprofit', { source_page: '/fundraisers/' });
-    expect(window.plausible).toHaveBeenCalledWith('form_submit_nonprofit', expect.any(Object));
-  });
 });
 
 describe('getUtmParams', () => {

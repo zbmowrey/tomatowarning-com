@@ -18,7 +18,7 @@ export const siteConfig = {
     { label: 'Our Story', href: '/our-story/' },
     { label: 'Mission', href: '/mission/' },
     { label: 'Retailers', href: '/retailers/' },
-    { label: 'Fundraisers', href: '/fundraisers/' },
+
     {
       label: 'More',
       children: [

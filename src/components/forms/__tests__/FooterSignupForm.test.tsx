@@ -6,7 +6,6 @@ const baseProps = {
   formEndpoint: 'https://api.emailfan.com/subscribe',
   consumerListId: 'list-consumer',
   retailerListId: 'list-retailer',
-  nonprofitListId: 'list-nonprofit',
   successMessage: "You're on the list!",
   alreadySubscribedMessage: "You're already signed up.",
   noscriptFallbackUrl: 'https://emailfan.com/signup',
@@ -37,10 +36,9 @@ describe('FooterSignupForm', () => {
     vi.unstubAllGlobals();
   });
 
-  it('renders email and audience type fields', () => {
+  it('renders email field', () => {
     render(<FooterSignupForm {...baseProps} />);
     expect(screen.getByLabelText(/email/i)).toBeTruthy();
-    expect(screen.getByLabelText(/i am a/i)).toBeTruthy();
   });
 
   it('renders privacy policy link', () => {
@@ -48,41 +46,19 @@ describe('FooterSignupForm', () => {
     expect(screen.getByRole('link', { name: /privacy/i })).toBeTruthy();
   });
 
-  it('fires consumer_signup when Consumer is selected', async () => {
+  it('fires consumer_signup on successful submit', async () => {
     mockFetch(200, { success: true });
     render(<FooterSignupForm {...baseProps} />);
     fireEvent.input(screen.getByLabelText(/email/i), { target: { value: 'user@example.com' } });
-    fireEvent.input(screen.getByLabelText(/i am a/i), { target: { value: 'consumer' } });
     fireEvent.click(screen.getByRole('button', { name: /sign up/i }));
     await waitFor(() => expect(screen.getByRole('status')).toBeTruthy());
     expect(window.plausible).toHaveBeenCalledWith('consumer_signup', expect.any(Object));
   });
 
-  it('fires retailer_signup when Retailer is selected', async () => {
-    mockFetch(200, { success: true });
-    render(<FooterSignupForm {...baseProps} />);
-    fireEvent.input(screen.getByLabelText(/email/i), { target: { value: 'buyer@store.com' } });
-    fireEvent.input(screen.getByLabelText(/i am a/i), { target: { value: 'retailer' } });
-    fireEvent.click(screen.getByRole('button', { name: /sign up/i }));
-    await waitFor(() => expect(screen.getByRole('status')).toBeTruthy());
-    expect(window.plausible).toHaveBeenCalledWith('retailer_signup', expect.any(Object));
-  });
-
-  it('fires nonprofit_signup when Nonprofit is selected', async () => {
-    mockFetch(200, { success: true });
-    render(<FooterSignupForm {...baseProps} />);
-    fireEvent.input(screen.getByLabelText(/email/i), { target: { value: 'org@example.org' } });
-    fireEvent.input(screen.getByLabelText(/i am a/i), { target: { value: 'nonprofit' } });
-    fireEvent.click(screen.getByRole('button', { name: /sign up/i }));
-    await waitFor(() => expect(screen.getByRole('status')).toBeTruthy());
-    expect(window.plausible).toHaveBeenCalledWith('nonprofit_signup', expect.any(Object));
-  });
-
-  it('omits product_variety for all footer consumer signups', async () => {
+  it('omits product_variety for footer consumer signups', async () => {
     mockFetch(200, { success: true });
     render(<FooterSignupForm {...baseProps} />);
     fireEvent.input(screen.getByLabelText(/email/i), { target: { value: 'user@example.com' } });
-    fireEvent.input(screen.getByLabelText(/i am a/i), { target: { value: 'consumer' } });
     fireEvent.click(screen.getByRole('button', { name: /sign up/i }));
     await waitFor(() => expect(screen.getByRole('status')).toBeTruthy());
     const call = (window.plausible as ReturnType<typeof vi.fn>).mock.calls[0];
@@ -93,22 +69,20 @@ describe('FooterSignupForm', () => {
     mockFetch(200, { success: false, already_subscribed: true });
     render(<FooterSignupForm {...baseProps} />);
     fireEvent.input(screen.getByLabelText(/email/i), { target: { value: 'user@example.com' } });
-    fireEvent.input(screen.getByLabelText(/i am a/i), { target: { value: 'consumer' } });
     fireEvent.click(screen.getByRole('button', { name: /sign up/i }));
     await waitFor(() => expect(screen.getByRole('status')).toBeTruthy());
     expect(window.plausible).not.toHaveBeenCalled();
   });
 
-  it('uses the correct listId based on audience selection', async () => {
+  it('submits with the consumer listId', async () => {
     mockFetch(200, { success: true });
     render(<FooterSignupForm {...baseProps} />);
-    fireEvent.input(screen.getByLabelText(/email/i), { target: { value: 'buyer@store.com' } });
-    fireEvent.input(screen.getByLabelText(/i am a/i), { target: { value: 'retailer' } });
+    fireEvent.input(screen.getByLabelText(/email/i), { target: { value: 'user@example.com' } });
     fireEvent.click(screen.getByRole('button', { name: /sign up/i }));
     await waitFor(() => expect(screen.getByRole('status')).toBeTruthy());
     const body = JSON.parse(
       (vi.mocked(fetch).mock.calls[0][1] as RequestInit).body as string
     );
-    expect(body.listId).toBe('list-retailer');
+    expect(body.listId).toBe('list-consumer');
   });
 });

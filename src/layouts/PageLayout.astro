@@ -4,7 +4,7 @@ import Header from '@/components/layout/Header.astro';
 import MobileNav from '@/components/layout/MobileNav.astro';
 import Footer from '@/components/layout/Footer.astro';
 import { FooterSignupForm } from '@/components/forms/FooterSignupForm';
-import { FORM_ENDPOINT, consumerFormConfig, retailerFormConfig, nonprofitFormConfig } from '@/config/forms';
+import { FORM_ENDPOINT, consumerFormConfig, retailerFormConfig } from '@/config/forms';
 
 interface Props {
   title: string;
@@ -37,7 +37,6 @@ const { title, description, canonicalPath, ogImage, noIndex, structuredData } = 
       formEndpoint={FORM_ENDPOINT}
       consumerListId={consumerFormConfig.listId}
       retailerListId={retailerFormConfig.listId}
-      nonprofitListId={nonprofitFormConfig.listId}
       successMessage="You're on the list. The storm is building — we'll be in touch."
       alreadySubscribedMessage="You're already signed up — we'll keep you posted."
       noscriptFallbackUrl={consumerFormConfig.noscriptFallbackUrl}
