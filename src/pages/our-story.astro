@@ -1,0 +1,99 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import CTAButton from '@/components/common/CTAButton.astro';
+---
+
+<PageLayout
+  title="Our Story | Tomato Warning"
+  description="How a three-year-old's mispronunciation of 'tornado warning' became a Florida salsa brand with a disaster relief mission."
+  canonicalPath="/our-story/"
+>
+  <article class="story-page">
+    <div class="prose-inner">
+
+      <header class="page-header">
+        <h1>Our Story</h1>
+      </header>
+
+      <div class="prose">
+        <p>
+          Summer evening. Southern Illinois. The sky had turned that shade of green-gray that means pay attention. A tornado warning scrolled across the television. Max was three. He looked up at his dad and said, with total confidence: <em>"Daddy, there's a Tomato Warning."</em>
+        </p>
+
+        <p>
+          He meant tornado. But the name stuck — first as a family joke told at every dinner, then as something none of us could let go of.
+        </p>
+
+        <p>
+          Then we moved to Florida. And the storms followed.
+        </p>
+
+        <p>
+          Gulf Coast hurricanes — not the distant, televised kind, but the kind where you board windows, fill bathtubs, and wait. We watched communities in our own backyard lose homes, schools, businesses. We saw the aftermath in eastern Tennessee and western North Carolina — places where people never expected to learn the word "catastrophic" firsthand. We watched volunteers fill gaps that governments could not fill fast enough.
+        </p>
+
+        <p>
+          Somewhere in that accumulation of weather and witness, a mispronunciation became a mission. If storms were going to name our brand, the least we could do was help people survive the real ones.
+        </p>
+
+        <p>
+          Tomato Warning is a premium salsa brand rated on the Enhanced Fujita tornado scale — five salsas, EF-1 through EF-5, from a bright coastal calm to total devastation. At least 10% of net profits go directly to disaster relief organizations helping communities recover.
+        </p>
+
+        <p>
+          A kid said the wrong word at the right time. Now it means something.
+        </p>
+
+        <div class="story-cta">
+          <CTAButton href="/mission/" variant="primary" text="Read Our Mission" />
+          <CTAButton href="/products/" variant="secondary" text="Find Your Level" />
+        </div>
+      </div>
+
+    </div>
+  </article>
+</PageLayout>
+
+<style>
+  .story-page {
+    padding: 3rem 1.5rem;
+  }
+
+  .prose-inner {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .page-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(44, 44, 44, 0.15);
+  }
+
+  .page-header h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0;
+    color: var(--storm-charcoal);
+  }
+
+  .prose {
+    color: var(--storm-charcoal);
+    line-height: 1.75;
+  }
+
+  .prose :global(p) {
+    margin: 0 0 1rem;
+  }
+
+  .prose :global(em) {
+    font-style: italic;
+  }
+
+  .story-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding-top: 1.5rem;
+  }
+</style>

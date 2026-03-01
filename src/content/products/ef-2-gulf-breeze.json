@@ -2,8 +2,8 @@
   "name": "Gulf Breeze",
   "efLevel": 2,
   "slug": "ef-2-gulf-breeze",
-  "flavorHeadline": "Roasted tomato, chipotle smoke, sharp serrano, apple cider vinegar brightness",
-  "heatDescriptor": "Building on the horizon — smoke, depth, and your first real tingle",
+  "flavorHeadline": "Low chipotle smoke rolling over roasted tomato, sharp serrano sting, brightened by apple cider vinegar",
+  "heatDescriptor": "The storm builds — smoke, depth, and your first real tingle",
   "scovilleMin": 1500,
   "scovilleMax": 5000,
   "keyIngredients": [
@@ -13,13 +13,13 @@
   "efColor": "#CC5500",
   "jarImage": "/images/products/ef-2-gulf-breeze.png",
   "jarImageAlt": "Jar of Tomato Warning Gulf Breeze EF-2 salsa with a burnt orange label",
-  "productStory": "The barometer drops. The sky turns that particular shade of gray-green, and the air goes heavy with intention. Gulf Breeze is the first signal that the atmosphere is organizing into something purposeful. Roasted tomatoes carry low, rolling chipotle smoke — the kind you smell before you taste. Then sharp serrano peppers deliver the first real strike of heat, and apple cider vinegar cuts through with a brightness that keeps you reaching back. 1,500 to 5,000 SHU. You will notice this. You will want to.",
+  "productStory": "The barometer drops. The sky turns that particular shade of gray-green, and the air goes heavy with intention. Gulf Breeze is the first signal that the atmosphere is organizing into something purposeful. Roasted tomatoes carry low, rolling chipotle smoke — the kind that hits the back of your throat before your tongue catches up. Sharp serrano peppers deliver the first real strike of heat, a clean sting that wakes the whole palate. Then apple cider vinegar cuts through with a brightness that keeps you reaching back for more. 1,500 to 5,000 SHU. You will notice this. You will want to.",
   "pairings": [
-    "Pulled pork sandwiches",
+    "Slow-pulled pork on a brioche bun",
     "Black bean and rice bowls",
-    "Smoked brisket",
+    "Smoked brisket off the cutting board",
     "Quesadillas with pepper jack",
-    "A cold lager"
+    "A cold lager — the colder the better"
   ],
   "status": "published"
 }

@@ -15,14 +15,15 @@ export const siteConfig = {
   },
   nav: [
     { label: 'Products', href: '/products/' },
+    { label: 'Our Story', href: '/our-story/' },
     { label: 'Mission', href: '/mission/' },
+    { label: 'Retailers', href: '/retailers/' },
+    { label: 'Fundraisers', href: '/fundraisers/' },
     {
-      label: 'Partners',
+      label: 'More',
       children: [
-        { label: 'Retailers', href: '/retailers/' },
-        { label: 'Fundraisers', href: '/fundraisers/' },
-        { label: 'Distributors', href: '/distributors/' },
         { label: 'Press', href: '/press/' },
+        { label: 'Distributors', href: '/distributors/' },
       ],
     },
   ] satisfies NavItem[],

@@ -2,8 +2,8 @@
   "name": "Coastal Calm",
   "efLevel": 1,
   "slug": "ef-1-coastal-calm",
-  "flavorHeadline": "Sun-ripened Florida tomatoes, crisp poblano, bright cilantro, fresh lime",
-  "heatDescriptor": "A gentle gust — all flavor, little fire",
+  "flavorHeadline": "Bright cilantro, crisp poblano, sun-ripened tomato, and a squeeze of lime that pulls everything coastal",
+  "heatDescriptor": "A gentle gust — big flavor, little fire",
   "scovilleMin": 500,
   "scovilleMax": 1500,
   "keyIngredients": [
@@ -13,13 +13,13 @@
   "efColor": "#D4A017",
   "jarImage": "/images/products/ef-1-coastal-calm.png",
   "jarImageAlt": "Jar of Tomato Warning Coastal Calm EF-1 salsa with a golden-yellow label",
-  "productStory": "Golden hour. The window is open, the air still carries salt, and the sky hasn't decided what it's doing yet. Coastal Calm lives in that moment — sun-ripened Florida tomatoes, crisp poblano, cilantro you can smell before you taste it, and a squeeze of fresh lime that pulls everything bright. Every ingredient is visible in the jar and honest on the tongue. 500 to 1,500 SHU — a whisper of warmth, nothing more. This is not the absence of power. It is power at rest.",
+  "productStory": "Golden hour on the Gulf. The window is open, salt air drifts through the kitchen, and the sky hasn't decided what it's doing yet. Coastal Calm lives in that stillness — sun-ripened Florida tomatoes, crisp poblano you can hear when you bite into it, cilantro so fresh it fills the room before you taste it, and a squeeze of lime that makes everything sing. Every ingredient is visible in the jar and honest on the tongue. 500 to 1,500 SHU — a whisper of warmth, nothing more. This is not the absence of power. It is power at rest.",
   "pairings": [
-    "Fish tacos with lime slaw",
+    "Blackened fish tacos with citrus slaw",
     "Scrambled eggs and avocado toast",
-    "Grilled shrimp skewers",
+    "Grilled Gulf shrimp skewers",
     "Fresh oysters on the half shell",
-    "Chips and guacamole"
+    "Chips — the good ones — and guacamole"
   ],
   "status": "published"
 }

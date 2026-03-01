@@ -16,13 +16,31 @@ import { FORM_ENDPOINT, formConfigs } from '@/config/forms';
         <p class="eyebrow">Distribution</p>
         <h1>Distribute the Storm.</h1>
         <p class="page-lead">
-          We're building distribution partnerships to bring Tomato Warning to shelves nationwide. If you're a distributor interested in a premium, mission-driven salsa brand with five SKUs and a built-in heat rating system, we'd love to talk.
+          Five premium salsas rated on the Enhanced Fujita scale. Published Scoville ranges from 500 to 350,000 SHU. A shelf presence that stops customers cold — storm charcoal labels with graduated color, gold foil, and a brand story that generates its own word-of-mouth.
         </p>
       </header>
 
+      <div class="dist-details">
+        <div class="dist-block">
+          <h2>The Opportunity</h2>
+          <p>
+            Premium salsa is the fastest-growing segment in the category, and no other brand combines a systematic heat rating, published Scoville ranges, a verifiable charitable mission, and an origin story that connects all three. Tomato Warning is built to scale — five SKUs, consistent production, and a brand identity that differentiates on the shelf from Day One.
+          </p>
+        </div>
+        <div class="dist-block">
+          <h2>What We Bring</h2>
+          <ul class="value-list">
+            <li><strong>Five SKUs, one system.</strong> EF-1 through EF-5, graduated heat and flavor profiles that drive collection and repeat purchase.</li>
+            <li><strong>Florida-made, batch consistent.</strong> Glass jars, premium ingredients, Scoville-verified production.</li>
+            <li><strong>Marketing support.</strong> In-store demos, shelf talkers, social media promotion, and a QR code on every jar driving digital engagement.</li>
+            <li><strong>Mission-driven.</strong> At least 10% of net profits to named disaster relief organizations. A brand retailers are proud to carry.</li>
+          </ul>
+        </div>
+      </div>
+
       <div class="cta-section">
         <p>
-          For distribution inquiries, reach out directly at
+          Ready to bring the storm to your retailers? Reach out directly at
           <a href="mailto:hello@tomatowarning.com">hello@tomatowarning.com</a>.
         </p>
       </div>
@@ -50,7 +68,7 @@ import { FORM_ENDPOINT, formConfigs } from '@/config/forms';
   }
 
   .distributors-inner {
-    max-width: 720px;
+    max-width: 1000px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -83,6 +101,52 @@ import { FORM_ENDPOINT, formConfigs } from '@/config/forms';
     max-width: 60ch;
   }
 
+  .dist-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .dist-block h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--storm-charcoal);
+    margin: 0 0 0.75rem;
+  }
+
+  .dist-block p {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--storm-charcoal);
+    opacity: 0.85;
+    margin: 0;
+  }
+
+  .value-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .value-list li {
+    padding-left: 1.25rem;
+    position: relative;
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--storm-charcoal);
+  }
+
+  .value-list li::before {
+    content: '\2192';
+    position: absolute;
+    left: 0;
+    color: var(--radar-teal);
+    font-weight: 700;
+  }
+
   .cta-section {
     font-size: 1.0625rem;
     line-height: 1.7;
@@ -98,5 +162,12 @@ import { FORM_ENDPOINT, formConfigs } from '@/config/forms';
 
   .cta-section a:hover {
     color: var(--accent-gold);
+  }
+
+  @media (max-width: 768px) {
+    .dist-details {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
   }
 </style>
